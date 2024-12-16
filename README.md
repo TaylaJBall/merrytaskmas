@@ -104,4 +104,17 @@ I chose to follow the MoSCoW Prioritization method for LitRPG Library, identifyi
 - **Could Haves**: these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows.
 - **Won't Haves**: the features or components that either no longer fit the project's brief or are of very low priority for this release. 
 
+### Merry Taskmas Features
+| **Title**        |         **User stories**                                                                   | **Priority** |
+|-------------------|---------------------------------------------------------------------------|--------------|
+| **#1 User Login**|**I want to log in to my account so that I can access my personal christmas dashboard**                                                                                       | **MUST HAVE** |   
+| **#2 Countdown to Christmas** |**I want to see a countdown to Christmas So that I can track how many days are left**| **MUST HAVE** |
+| **#3 Todo List for Christmas Preparations**|**I want to manage a to-do list So that I can organize tasks for Christmas preparations.**| **MUST HAVE** |
+| **#4 Wishlists for Gift Ideas**|**I want to create and manage wishlists for different people So that I can keep track of gift ideas.** | **MUST HAVE** |
+| **#5 Festive UI**|**I want to see a festive design on the dashboardSo that I feel the Christmas spirit while using it.** | **MUST HAVE** |
+| **#6 Registration**|**I want to register for an account So that I can create my personalized dashboard** | **MUST HAVE** |
+| **#7 Calendar for Christmas Parties/Events**|**I want to have a calendar to track Christmas parties and eventsSo that I can stay organized during the holiday season.**  | **SHOULD HAVE** |
+| **#8 Meal Planner**|**I want to plan meals for the holiday season So that I can stay organized and prepared for Christmas dinners.**| **COULD HAVE** |
+| **#9 Shopping List** |**I want to manage a shopping list for Christmas So that I can keep track of the items I need to buy.**                         | **COULD HAVE** |
+
 
