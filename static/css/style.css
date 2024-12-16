@@ -1,3 +1,87 @@
-h1 {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #8d0801;
+    --secondary-color: #1d7874;
+    --accent-color: #679289;
+    --text-color: #f4c095;
+    --dark-color: #43291f;
+}
+
+/* Custom Styles */
+
+body {
+    background: url('static/images/snowman_bg.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-color: var(--bg-color);
+    padding-top: 110px;
+    color: var(--text-color);
+    font-size: large;
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color);
+    font-family: 'Alef', sans-serif;
+    letter-spacing: 1px;
+}
+
+p {
+    color: var(--text-color);
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #8B3A3A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000;
+}
+
+
+.navbar-brand {
+    font-family: "Alice", sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    font: weight 700px;
+    color: var(--text-color);
+}
+
+
+/*------- Footer ---------- */
+footer {
+    background-color: #8B3A3A;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.developer-names {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.developer-circle {
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
