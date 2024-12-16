@@ -103,6 +103,62 @@ p {
     font-weight:lighter;
 }
 
+/* --------Login----------- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.red-box {
+    background: rgba(141, 8, 1, 0.5); /* Transparent red */
+    color: #f4d58d;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dotted #f4d58d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10; /* Ensure visibility */
+    margin-top: 20px; /* Adjust spacing */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+
+.red-box .login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.red-box button {
+    background-color:#8d0801;
+    color: #f4d58d;
+    border: 1px dotted #f4d58d;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.red-box button:hover {
+    background-color: #679289;
+    color: #071e22;
+}
+
+.container {
+    margin-top: 50px;
+}
+.container-fluid {
+    position: relative;
+    height: 100vh;
+}
+
 /*------- Footer ---------- */
 footer {
     background-color: #8B3A3A;
