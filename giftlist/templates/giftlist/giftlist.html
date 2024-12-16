@@ -1,10 +1,27 @@
 {% extends base.html %}
 
+{% block title %}Gift Lists{% endblock %}
+
 {% block content %}
 
-<h1>Gift Lists</h1>
-<br>
+<div class="container d-flex flex-row flex-wrap justfy-content-center">
+    <h1 class="text-center p-2">
+        My Lists
+    </h1>
 
-
+    {% for giftlist in giftlists %}
+    <a href="" class="giftlist">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">View Items</a>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
 
 {% endblock %}

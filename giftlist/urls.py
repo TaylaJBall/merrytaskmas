@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import GiftList, AddGiftList
+from .views import GiftList, Item, AddGiftList, AddItem
 
 urlpatterns = [
     path('', GiftList.as_view(), name='giftlist'),

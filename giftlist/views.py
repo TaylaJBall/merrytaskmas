@@ -1,10 +1,12 @@
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import CreateView, ListView
 from .models import GiftList, Item
 from .forms import GiftListForm, ItemForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-class GiftList(TemplateView):
+class GiftList(ListView):
     template_name = 'giftlist/giftlist.html'
+    model = GiftList
+    context_object_name = 'giftlist'
 
 class AddGiftList(LoginRequiredMixin ,CreateView):
     """
@@ -18,6 +20,12 @@ class AddGiftList(LoginRequiredMixin ,CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddGiftList, self).form_valid(form)
+
+
+class Item(ListView):
+    template_name = 'giftlist/item.html'
+    model = Item
+    context_object_name = 'item'
 
 
 class AddItem(LoginRequiredMixin, CreateView):
