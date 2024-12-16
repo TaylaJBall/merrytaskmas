@@ -16,7 +16,7 @@
 /* Custom Styles */
 
 body {
-    background: url('static/images/snowman_bg.webp') no-repeat center center fixed;
+    background: url('../images/snowman_bg.webp') no-repeat center center fixed;
     background-size: cover;
     background-color: var(--bg-color);
     padding-top: 110px;
@@ -44,21 +44,45 @@ p {
     right: 0;
     z-index: 1000;
     width: 100%;
+    border-bottom: 1px dotted var(--text-color);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     z-index: 1000;
+    
 }
 
 
 .navbar-brand {
     font-family: "Alice", sans-serif;
+    color:var(--text-color);
     font-size: 1.8rem;
     font-weight: bold;
+    margin-right:0px;
 }
 
-.nav-item {
-    font: weight 700px;
-    color: var(--text-color);
+.navbar-brand:hover {
+    color: var(--accent-color);
+    text-decoration: none; 
+    transition: color 0.3s ease;
 }
+.nav-link {
+    font-weight:600px;
+    letter-spacing: 1px;
+    color:var(--text-color);
+
+}
+
+.nav-link:hover, 
+.nav-link:active {
+    text-decoration: none;
+    color: var(--accent-color);
+
+}
+
+.navbar-toggler {
+    color:var(--text-color);
+
+}
+
 
 
 /*------- Footer ---------- */
