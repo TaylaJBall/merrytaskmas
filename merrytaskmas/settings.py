@@ -33,7 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-taylajball-merrytaskmas-jtsntl9ikt4.ws.codeinstitute-ide.net',
-    'https://merrytaskmas-e050025a1784.herokuapp.com/']
+    'https://merrytaskmas-e050025a1784.herokuapp.com/',
+    '8000-taylajball-merrytaskmas-qcfbgddvrwv.ws.codeinstitute-ide.net',]
 
 
 # Application definition

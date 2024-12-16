@@ -1,0 +1,143 @@
+{% url 'home' as home_url %}
+{% load static %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Merry Taskmas is your ultimate holiday planning tool, designed to help you organize tasks, manage gift lists, and prepare for a stress-free Christmas.">
+    <meta name="keywords"
+        content="Christmas, Task Manager, Holiday Planning, Gift List, To-Do List, Christmas Countdown, Meal Planner, Shopping List, Calendar">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+
+    <!-- Title -->
+    <title>Merry Taskmas</title>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container">
+        <!-- Title on Mobile and Tablet -->
+        <a class="navbar-brand d-md-none" href="#">
+            Merry Taskmas
+        </a>
+
+        <!-- Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-holly-berry"></i>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto d-flex align-items-center text-center">
+                <!-- Left Links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Task List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-1" href="#">Gifts</a>
+                </li>
+
+                <!-- Center Title (Desktop Only) -->
+                <li class="nav-item d-none d-md-block">
+                    <a class="navbar-brand" href="#">
+                        Merry Taskmas</a>
+                </li>
+
+                <!-- Right Links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+
+            <!-- Logged in Status -->
+            <span class="navbar-text d-none d-md-block ms-1">
+                {% if user.is_authenticated %}
+                Logged in as {{ user }}
+                {% else %}
+                Not logged in
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- displaying Django messages -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+          fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+
+
+    <div class="b-example-divider mt-4"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="developer-names">
+            <div class="text-center">
+                <div class="developer-circle"></div>
+                <p class="mt-2">Tayla Ball</p>
+            </div>
+            <div class="text-center">
+                <div class="developer-circle"></div>
+                <p class="mt-2">Joanne Clarke</p>
+            </div>
+            <div class="text-center">
+                <div class="developer-circle"></div>
+                <p class="mt-2">Laura Hall</p>
+            </div>
+        </div>
+        <p>&copy; 2024 The Gitmas Squad. All rights reserved.</p>
+    </footer>
+    </div>
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+
+    {% block extras %}
+    {% endblock %}
+
+</body>
+
+</html>
