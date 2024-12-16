@@ -99,8 +99,8 @@ p {
 }
 
 .user-text {
-    color:var(--accent-color);
-    font-weight:300px;
+    color:var(--text-color);
+    font-weight:lighter;
 }
 
 /*------- Footer ---------- */
