@@ -29,10 +29,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-taylajball-merrytaskmas-jtsntl9ikt4.ws.codeinstitute-ide.net', '8000-taylajball-merrytaskmas-wib198bg41f.ws.codeinstitute-ide.net',
+    '8000-taylajball-merrytaskmas-jtsntl9ikt4.ws.codeinstitute-ide.net',
+    '8000-taylajball-merrytaskmas-wib198bg41f.ws.codeinstitute-ide.net',
+    '8000-taylajball-merrytaskmas-qcfbgddvrwv.ws.codeinstitute-ide.net',
     'https://merrytaskmas-e050025a1784.herokuapp.com/']
 
 
@@ -45,6 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'cloudinary',
     'home',
@@ -52,6 +58,10 @@ INSTALLED_APPS = [
     'task',
 
 ]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'merrytaskmas.urls'
@@ -119,6 +130,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
