@@ -7,7 +7,7 @@ from django.db import models
 
 class TodoList(models.Model):
     todo_list_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -21,7 +21,7 @@ class meta:
 
 class Task(models.Model):
     task_id = models.AutoField(primary_key=True)
-    todo_list_id = models.ForeignKey(TodoList, on_delete=models.CASCADE)
+    todo_list = models.ForeignKey(TodoList, on_delete=models.CASCADE)
     description = models.TextField(blank=True)
     is_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
