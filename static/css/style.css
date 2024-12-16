@@ -19,13 +19,24 @@ h5 {
 
 /* Custom Styles */
 
+html, body {
+    height: 100%; /* Ensures the page fills the viewport height */
+    margin: 0; /* Prevents default margin from affecting layout */
+    display: flex; /* Enable Flexbox for the main layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
 body {
+    padding-top: 110px; /* Retain your navbar padding */
     background: url('../images/snowman_bg.webp') no-repeat center center fixed;
     background-size: cover;
     background-color: var(--bg-color);
-    padding-top: 110px;
     color: var(--text-color);
     font-size: large;
+}
+
+main {
+    flex: 1; /* Makes the content grow to fill available space */
 }
 
 h1, h2, h3 {
@@ -38,7 +49,7 @@ p {
     color: var(--text-color);
 }
 
-/* Navbar */
+/*---------- Navbar ------------*/
 
 .navbar {
     background-color: #8B3A3A;
@@ -87,7 +98,10 @@ p {
 
 }
 
-
+.user-text {
+    color:var(--accent-color);
+    font-weight:300px;
+}
 
 /*------- Footer ---------- */
 footer {

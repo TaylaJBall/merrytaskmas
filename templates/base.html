@@ -63,7 +63,7 @@
 
                     <!-- Center Title (Desktop Only) -->
                     <li class="nav-item d-none d-md-block mx-4">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="{% url 'home' %}">
                             Merry Taskmas</a>
                     </li>
 
@@ -72,12 +72,12 @@
                         <a class="nav-link" href="#">Calendar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                 </ul>
 
                 <!-- Logged in Status -->
-                <span class="navbar-text d-none d-md-block ms-1">
+                <span class="user-text d-none d-md-block ms-1">
                     {% if user.is_authenticated %}
                     Logged in as {{ user }}
                     {% else %}
@@ -104,6 +104,7 @@
             </div>
         </div>
     </div>
+
     {% block content %}
     <!-- Content Goes here -->
     {% endblock content %}
