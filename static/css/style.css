@@ -13,6 +13,10 @@
     --dark-color: #43291f;
 }
 
+h5 {
+    font-family: 'Alice', sans-serif;
+}
+
 /* Custom Styles */
 
 body {
@@ -90,22 +94,29 @@ footer {
     background-color: #8B3A3A;
     padding: 10px 0;
     text-align: center;
+    border-top: 1px dotted var(--text-color);
 }
 
-footer p {
-    margin: 0;
+footer i {
+    color:var(--text-color);
+    text-decoration: none;
+    
 }
 
-.developer-names {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 10px;
+footer i:hover,
+footer i:active {
+    color:var(--accent-color);
 }
 
-.developer-circle {
-    background: white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+footer a {
+    text-decoration: none;
+    color: var(--text-color); 
+}
+
+.vr {
+    display: inline-block; 
+    width: 2px; 
+    height: 100px; 
+    background-color: var(--text-color); 
+    margin: 0 10px; 
 }
