@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'home',
+    'giftlist',
+    'task',
 
 ]
 
