@@ -36,57 +36,57 @@
 
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-dark">
-    <div class="container">
-        <!-- Title on Mobile and Tablet -->
-        <a class="navbar-brand d-md-none" href="#">
-            Merry Taskmas
-        </a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <!-- Title on Mobile and Tablet -->
+            <a class="navbar-brand d-md-none" href="#">
+                Merry Taskmas
+            </a>
 
-        <!-- Toggler Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-holly-berry"></i>
-        </button>
+            <!-- Toggler Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-holly-berry"></i>
+            </button>
 
-        <!-- Navbar Content -->
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mx-auto d-flex align-items-center text-center">
-                <!-- Left Links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Task List</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-1" href="#">Gifts</a>
-                </li>
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto d-flex align-items-center text-center">
+                    <!-- Left Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Task List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="">Gifts</a>
+                    </li>
 
-                <!-- Center Title (Desktop Only) -->
-                <li class="nav-item d-none d-md-block">
-                    <a class="navbar-brand" href="#">
-                        Merry Taskmas</a>
-                </li>
+                    <!-- Center Title (Desktop Only) -->
+                    <li class="nav-item d-none d-md-block mx-4">
+                        <a class="navbar-brand" href="{% url 'home' %}">
+                            Merry Taskmas</a>
+                    </li>
 
-                <!-- Right Links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Calendar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
-            </ul>
+                    <!-- Right Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                </ul>
 
-            <!-- Logged in Status -->
-            <span class="navbar-text d-none d-md-block ms-1">
-                {% if user.is_authenticated %}
-                Logged in as {{ user }}
-                {% else %}
-                Not logged in
-                {% endif %}
-            </span>
+                <!-- Logged in Status -->
+                <span class="user-text d-none d-md-block ms-1">
+                    {% if user.is_authenticated %}
+                    Logged in as {{ user }}
+                    {% else %}
+                    Not logged in
+                    {% endif %}
+                </span>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
     <!-- displaying Django messages -->
@@ -104,6 +104,7 @@
             </div>
         </div>
     </div>
+
     {% block content %}
     <!-- Content Goes here -->
     {% endblock content %}
@@ -111,24 +112,72 @@
 
     <div class="b-example-divider mt-4"></div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="developer-names">
-            <div class="text-center">
-                <div class="developer-circle"></div>
-                <p class="mt-2">Tayla Ball</p>
-            </div>
-            <div class="text-center">
-                <div class="developer-circle"></div>
-                <p class="mt-2">Joanne Clarke</p>
-            </div>
-            <div class="text-center">
-                <div class="developer-circle"></div>
-                <p class="mt-2">Laura Hall</p>
+    <footer class="py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- "The Team" Label -->
+                <div class="col-12 col-md-2 text-center text-md-start mb-3 mb-md-0">
+                    <h5 class="text-uppercase">The Team:</h5>
+                </div>
+    
+                <!-- Team Members Section -->
+                <div class="col-12 col-md-6 d-flex justify-content-around text-center mb-3 mb-md-0">
+                    <!-- Developer 1 -->
+                    <div>
+                        <img src="static/images/tayla2.png" alt="Tayla Ball" class="developer-circle mb-2">
+                        <p class="mb-1">Tayla Ball</p>
+                        <a href="https://www.linkedin.com/in/tayla-ball-3a4a1b329/" target="_blank" class="me-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/TaylaJBall" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+    
+                    <!-- Developer 2 -->
+                    <div>
+                        <img src="static/images/joanne2.png" alt="Joanne Clarke" class="developer-circle mb-2">
+                        <p class="mb-1">Joanne Clarke</p>
+                        <a href="https://www.linkedin.com/in/sarahjoanneclarke/" target="_blank" class="me-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Joanne1980" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+    
+                    <!-- Developer 3 -->
+                    <div>
+                        <img src="static/images/laura2.png" alt="Laura Hall" class="developer-circle mb-2">
+                        <p class="mb-1">Laura Hall</p>
+                        <a href="https://www.linkedin.com/in/laura-chris-hall/" target="_blank" class="me-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/laurachri-hall" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Vertical Rule for Larger Screens -->
+                <div class="col-12 col-md-1 d-none d-md-flex justify-content-center">
+                    <div class="vr"></div>
+                </div>
+    
+                <!-- Horizontal Rule for Smaller Screens -->
+                <div class="col-12 d-md-none">
+                    <hr class="my-3" />
+                </div>
+    
+                <!-- Copyright Section -->
+                <div class="col-12 col-md-3 text-center">
+                    <p class="mb-0">&copy; 2024 The Gitmas Squad. All rights reserved.</p>
+                </div>
             </div>
         </div>
-        <p>&copy; 2024 The Gitmas Squad. All rights reserved.</p>
     </footer>
+    
+    
     </div>
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

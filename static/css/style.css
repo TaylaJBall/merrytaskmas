@@ -13,15 +13,30 @@
     --dark-color: #43291f;
 }
 
+h5 {
+    font-family: 'Alice', sans-serif;
+}
+
 /* Custom Styles */
 
+html, body {
+    height: 100%; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+}
+
 body {
-    background: url('static/images/snowman_bg.webp') no-repeat center center fixed;
+    padding-top: 110px; 
+    background: url('../images/snowman_bg.webp') no-repeat center center fixed;
     background-size: cover;
     background-color: var(--bg-color);
-    padding-top: 110px;
     color: var(--text-color);
     font-size: large;
+}
+
+main {
+    flex: 1; 
 }
 
 h1, h2, h3 {
@@ -34,7 +49,7 @@ p {
     color: var(--text-color);
 }
 
-/* Navbar */
+/*---------- Navbar ------------*/
 
 .navbar {
     background-color: #8B3A3A;
@@ -44,44 +59,78 @@ p {
     right: 0;
     z-index: 1000;
     width: 100%;
+    border-bottom: 1px dotted var(--text-color);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     z-index: 1000;
+    
 }
 
 
 .navbar-brand {
     font-family: "Alice", sans-serif;
+    color:var(--text-color);
     font-size: 1.8rem;
     font-weight: bold;
+    margin-right:0px;
 }
 
-.nav-item {
-    font: weight 700px;
-    color: var(--text-color);
+.navbar-brand:hover {
+    color: var(--accent-color);
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+.nav-link {
+    font-weight:600px;
+    letter-spacing: 1px;
+    color:var(--text-color);
+
 }
 
+.nav-link:hover, 
+.nav-link:active {
+    text-decoration: none;
+    color: var(--accent-color);
+
+}
+
+.navbar-toggler {
+    color:var(--text-color);
+
+}
+
+.user-text {
+    color:var(--text-color);
+    font-weight:lighter;
+}
 
 /*------- Footer ---------- */
 footer {
     background-color: #8B3A3A;
     padding: 10px 0;
     text-align: center;
+    border-top: 1px dotted var(--text-color);
 }
 
-footer p {
-    margin: 0;
+footer i {
+    color:var(--text-color);
+    text-decoration: none;
+    
 }
 
-.developer-names {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 10px;
+footer i:hover,
+footer i:active {
+    color:var(--accent-color);
 }
 
-.developer-circle {
-    background: white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+footer a {
+    text-decoration: none;
+    color: var(--text-color); 
+}
+
+.vr {
+    display: inline-block; 
+    width: 2px; 
+    height: 100px; 
+    background-color: var(--text-color); 
+    margin: 0 10px; 
 }
