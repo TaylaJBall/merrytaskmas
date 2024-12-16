@@ -14,8 +14,13 @@ class GiftList(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-created_at']
 
-class Items(models.Model):
+    def __str__(self):
+        return str(self.person_name)
+
+class Item(models.Model):
     """
     A model to create Items to add to giftlist
     """
@@ -25,3 +30,9 @@ class Items(models.Model):
     link = models.CharField(max_length=500, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return str(self.descrption)

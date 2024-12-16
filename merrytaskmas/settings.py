@@ -35,6 +35,10 @@ ALLOWED_HOSTS = [
     '8000-taylajball-merrytaskmas-jtsntl9ikt4.ws.codeinstitute-ide.net', '8000-taylajball-merrytaskmas-wib198bg41f.ws.codeinstitute-ide.net',
     'https://merrytaskmas-e050025a1784.herokuapp.com/']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net",
+    "https://*.herokuapp.com"
+    ]
 
 # Application definition
 
@@ -51,6 +55,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'cloudinary',
+    'crispy_forms',
     'home',
     'giftlist',
     'task',
