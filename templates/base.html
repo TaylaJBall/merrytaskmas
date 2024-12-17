@@ -37,8 +37,8 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md">
-        <div class="container">
+    <nav class="navbar navbar-expand-md align-items-center justify-content-center">
+        <div>
             <!-- Title on Mobile and Tablet -->
             <a class="navbar-brand d-md-none" href="{% url 'index' %}">
                 Merry Taskmas
@@ -104,15 +104,15 @@
     <div class="b-example-divider mt-4"></div>
 
     <footer>
-        <div class="container">
-            <div class="row align-items-center">
+        <div class="d-flex justify-content-center align-items-start p-3 ms-4">
+            <div class="row w-100 g-0">
                 <!-- "The Team" Label -->
                 <div class="col-12 col-md-2 text-center text-md-start mb-3 mb-md-0">
-                    <h5 class="text-uppercase">The Team:</h5>
+                    <h5 class="text-uppercase mb-3">The Team:</h5>
                 </div>
     
                 <!-- Team Members Section -->
-                <div class="col-12 col-md-6 d-flex justify-content-around text-center mb-3 mb-md-0">
+                <div class="col-12 col-md-6 d-flex justify-content-around text-center mb-3 mb-md-0 align-self-start">
                     <!-- Developer 1 -->
                     <div>
                         <img src="{% static 'images/tayla2.png' %}" alt="Tayla Ball" class="developer-circle mb-2">
@@ -151,22 +151,23 @@
                 </div>
     
                 <!-- Vertical Rule for Larger Screens -->
-                <div class="col-12 col-md-1 d-none d-md-flex justify-content-center">
+                <div class="col-12 col-md-1 d-none d-md-flex justify-content-center align-self-start">
                     <div class="vr"></div>
                 </div>
     
                 <!-- Horizontal Rule for Smaller Screens -->
-                <div class="col-12 d-md-none">
+                <div class="col-12 d-md-none align-self-start">
                     <hr class="my-3" />
                 </div>
     
                 <!-- Copyright Section -->
-                <div class="col-12 col-md-3 text-center">
+                <div class="col-12 col-md-3 text-center align-self-start">
                     <p class="mb-0">&copy; 2024 The Gitmas Squad. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
+    
     
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
