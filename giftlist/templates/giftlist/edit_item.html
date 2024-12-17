@@ -4,15 +4,20 @@
 {% block title %}Edit Item{% endblock %}
 
 {% block content %}
-<div class="container">
-    <form method="POST" enctype="multipart/form-data" class="p-2 form">
-        <h1 class="text-center">Edit Item</h1>
-        {% csrf_token %}
-        {{ form.media }}
-        {{ form|crispy }}
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-2">Edit Item</button>
+<main>
+    <div class="container d-flex justify-content-center align-items-center my-4">
+        <!-- Centered Red Box -->
+        <div class="red-box-solid p-4 shadow rounded" style="max-width: 30rem; width: 100%;">
+            <h1 class="text-center mb-4">Edit Item</h1>
+            <form method="POST" enctype="multipart/form-data" class="form">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form|crispy }}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-add mt-3 w-50">Save Changes</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
+    </div>
+</main>
 {% endblock %}

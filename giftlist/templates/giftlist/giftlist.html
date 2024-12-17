@@ -5,31 +5,37 @@
 {% block content %}
 <main>
     <div class="container my-4">
-        <div class="d-flex justify-content-center">
-            <h1 class="text-center red-box-solid" style="width: 20rem;">My Gift Lists</h1>
-            <a href="{% url 'add_giftlist' %}" class="btn btn-primary w-25">Add List</a>
+        <!-- Header Section inside Centered Red Box -->
+        <div class="red-box-solid p-4 text-center mb-4 mx-auto" style="max-width: 25rem;">
+            <h1 class="mb-3">My Gift Lists</h1>
+            <a href="{% url 'add_giftlist' %}" class="btn btn-add btn-sm">Add List</a>
         </div>
         
+        <!-- Gift List Cards -->
         <div class="d-flex flex-wrap justify-content-center">
             {% for giftlist in giftlists %}
-            <div class="card m-3 shadow-sm rounded red-box-solid" style="width: 20rem;">
-                <div class="card-body text-center">
-                    <h2 class="card-title">{{ giftlist.person_name }}</h2>
-                    <p class="card-text fw-bold">Budget: £{{ giftlist.budget }}</p>
-                    <p class="card-text small">
-                        {% if giftlist.created_at == giftlist.updated_at %}
-                        Created: {{ giftlist.created_at }}
-                        {% else %}
-                        Updated: {{ giftlist.updated_at }}
-                        {% endif %}
-                    </p>
-                    <a href="{% url 'view_item' giftlist.id %}" class="stretched-link"></a>
-                    {% if request.user == giftlist.user %}
-                    <a href="{% url 'edit_giftlist' giftlist.id %}" class="btn btn-primary w-25">Edit</a>
-                    <a href="{% url 'delete_giftlist' giftlist.id %}" class="btn btn-primary w-25">Delete</a>
+                {% if request.user == giftlist.user %}
+                <div class="card m-3 shadow-sm rounded red-box-solid position-relative" style="width: 20rem;">
+                    <div class="card-body text-center">
+                        <h2 class="card-title mb-2">{{ giftlist.person_name }}</h2>
+                        <p class="card-text fw-bold">Budget: £{{ giftlist.budget }}</p>
+                        <p class="card-text small">
+                            {% if giftlist.created_at == giftlist.updated_at %}
+                                Created: {{ giftlist.created_at }}
+                            {% else %}
+                                Updated: {{ giftlist.updated_at }}
+                            {% endif %}
+                        </p>
+                        <!-- Edit and Delete Buttons -->
+                        <div class="d-flex justify-content-center gap-2 mt-3 position-relative" style="z-index: 2;">
+                            <a href="{% url 'edit_giftlist' giftlist.id %}" class="btn btn-edit btn-sm">Edit</a>
+                            <a href="{% url 'delete_giftlist' giftlist.id %}" class="btn btn-delete btn-sm">Delete</a>
+                        </div>
+                        <!-- Stretched Link -->
+                        <a href="{% url 'view_item' giftlist.id %}" class="stretched-link"></a>
+                    </div>
                 </div>
                 {% endif %}
-            </div>
             {% endfor %}
         </div>
     </div>

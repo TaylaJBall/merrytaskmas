@@ -1,15 +1,30 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-<div class="header-bar">
-    <a href="{% url 'tasks' %}">&#8592; Back</a>
-</div>
-<div class="card-body">
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input class="button" type="submit" value="Submit">
-    </form>
-</div>
+{% block content %}
+<main>
+    <div class="container d-flex justify-content-center align-items-center">
+        <!-- Red Box with Back Link and Form -->
+        <div class="red-box-solid p-4 rounded shadow" style="max-width: 30rem; width: 100%;">
+            <!-- Back Link -->
+            <div class="mb-3">
+                <a href="{% url 'tasks' %}" class="text-decoration-none fw-bold" style="color:#f4c095;">
+                    &#8592; Back
+                </a>
+            </div>
+
+            <!-- Form Header -->
+            <h2 class="text-center mb-4">Edit Task</h2>
+
+            <!-- Form -->
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-add w-50">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
 {% endblock %}

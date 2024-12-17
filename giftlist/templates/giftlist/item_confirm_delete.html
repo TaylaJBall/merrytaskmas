@@ -3,14 +3,21 @@
 {% block title %}Delete Item {{ object.description }}{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="text-center mt-2">Confirm Item Deletion</h1>
-    <div class="d-flex justify-content-center pt-3">
-        <form class="text-center" method="post">
-            {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object.description}}"?</p>
-        <input type="submit" value="confirm" class="btn btn-primary w-25">    
-        </form>
+<main>
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="red-box-solid p-4 rounded shadow text-center" style="max-width: 30rem; width: 100%;">
+            <h1 class="mb-4">Confirm Item Deletion</h1>
+            <form method="post">
+                {% csrf_token %}
+                <p class="mb-4">Are you sure you want to delete <strong>"{{ object.description }}"</strong>?</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <input type="submit" value="Confirm" class="btn btn-delete w-50">
+                    <a href="javascript:history.back()" class="btn btn-edit w-50">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+
+</main>
 {% endblock %}
