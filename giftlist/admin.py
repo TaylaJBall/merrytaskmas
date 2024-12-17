@@ -6,7 +6,7 @@ from .models import GiftList, Item
 @admin.register(GiftList)
 class GiftListAdmin(admin.ModelAdmin):
     list_display = (
-        'giftlist_id',
+        'id',
         'user',
         'person_name',
         'budget',
@@ -18,7 +18,7 @@ class GiftListAdmin(admin.ModelAdmin):
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
-        'item_id',
+        'id',
         'giftlist',
         'description',
         'link',
