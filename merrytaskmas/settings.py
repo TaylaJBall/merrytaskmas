@@ -29,14 +29,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-taylajball-merrytaskmas-jtsntl9ikt4.ws.codeinstitute-ide.net',
     '8000-taylajball-merrytaskmas-wib198bg41f.ws.codeinstitute-ide.net',
     '8000-taylajball-merrytaskmas-qcfbgddvrwv.ws.codeinstitute-ide.net',
-    'merrytaskmas-e050025a1784.herokuapp.com/']
+    'merrytaskmas-e050025a1784.herokuapp.com'],
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net",

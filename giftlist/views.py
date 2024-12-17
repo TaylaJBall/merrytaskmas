@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from giftlist.models import GiftList, Item
 from .forms import GiftListForm, ItemForm
 from django.urls import reverse
@@ -36,6 +36,19 @@ class DeleteGiftList(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         return reverse('giftlist')
+
+
+class EditGiftList(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    Edit a giftlist
+    """
+    template_name = 'giftlist/edit_giftlist.html'
+    model = GiftList
+    form_class = GiftListForm
+    success_url = '/giftlist/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
 
 
 class Items(LoginRequiredMixin, ListView):
@@ -87,3 +100,17 @@ class DeleteItem(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def get_success_url(self):
         giftlist_id = self.get_object().giftlist.id
         return reverse('view_item', kwargs={'giftlist_id': giftlist_id})
+
+
+
+class EditItem(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    Edit an Item
+    """
+    template_name = 'giftlist/edit_item.html'
+    model = Item
+    form_class = ItemForm
+    success_url = '/giftlist/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
