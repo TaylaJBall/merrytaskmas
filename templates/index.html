@@ -4,7 +4,18 @@
 
 {% block content %}
 <main>
+    <h1>Welcome to Merry Taskmas!</h1>
 
+    {% if event %}
+        <h2>{{ event.name }} Countdown</h2>
+        <div id="countdown" data-target-date="{{ event.event_date|date:'c' }}"></div>
+    {% else %}
+        <p>No event scheduled yet!</p>
+    {% endif %}
 </main>
 
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/countdown.js' %}"></script>
 {% endblock %}

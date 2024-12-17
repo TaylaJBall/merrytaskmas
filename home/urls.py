@@ -11,4 +11,5 @@ urlpatterns = [
     path('', lambda request: redirect('/index/') if request.user.is_authenticated else redirect('account_login'), name='home'),
     # Define the index page (for authenticated users)
     path('index/', HomePage.as_view(), name='index'),
+    
 ]
