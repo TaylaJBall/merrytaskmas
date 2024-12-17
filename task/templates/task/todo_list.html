@@ -1,44 +1,68 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-<div class="header-bar">
-    <div>
-        <h1>Hello {{request.user|title}}</h1>
-        <h3 style="margin:0">You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h3>
-    </div>  
-</div>
-<div id="search-add-wrapper">
-    <form method="GET" style="display: flex;">
-        <input type='text' name='search-area' placeholder="Search your task" value="{{search_input}}">
-        <input class="button" type="submit" value='Search'>
-    </form>
-    {% if tasks|length > 0 %}
-    <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
-    {% endif %}
-</div>
-<div id="tasklist" class="task-items-wrapper">
-    {% for task in tasks %}
-    <div class="task-wrapper" data-position="{{task.pk}}">
-        <div class="task-title">
-            {% if task.complete %}
-            <div class="task-complete-icon"></div>
-            <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i> {% else %}
-            <div class="task-incomplete-icon"></div>
-            <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
+{% block content %}
+<main>
+        <!-- Search and Add Section -->
+        <div class="container mb-4">
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <form method="GET" class="d-flex flex-grow-1" style="max-width: 500px;">
+                    <input type="text" name="search-area" placeholder="Search your task"
+                           value="{{ search_input }}" class="form-control me-2">
+                    <input type="submit" value="Search" class="btn btn-add">
+                </form>
+                {% if tasks|length > 0 %}
+                <a href="{% url 'task-create' %}" class="btn btn-add btn-lg" style="font-size: 1.5rem;">&#x2b;</a>
+                {% endif %}
+            </div>
         </div>
-        <div class="task-controls">
-            <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-            <span class="handle">&nbsp;&#10247;</span>
+    <!-- Header Section -->
+    <div class="container d-flex justify-content-center my-4">
+        <div class="red-box-solid p-4 rounded shadow text-center" style="max-width: 30rem; width: 100%;">
+            <h1 class="mb-3">Hello {{ request.user|title }}</h1>
+            <h3 class="mb-0">
+                You have <strong>{{ count }}</strong> incomplete task{{ count|pluralize:"s" }}
+            </h3>
         </div>
     </div>
-    {% empty %}
-    <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
-        <h3>No new tasks are created.</h3>
-        <h3>Create a <a style="text-decoration: none; color: #e53935;" href="{% url 'task-create' %}">New task</a> !
-        </h3>
+
+    <!-- Task List -->
+    <div class="container red-box-solid p-4 rounded shadow" style="width:500px;">
+        <div id="tasklist" class="task-items-wrapper">
+            {% for task in tasks %}
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2" data-position="{{ task.pk }}">
+                <div class="task-title">
+                    {% if task.complete %}
+                    <div class="task-complete-icon d-inline-block me-2"></div>
+                    <i>
+                        <s>
+                            <a href="{% url 'task-update' task.id %}" class="text-decoration-none text-muted">
+                                {{ task }}
+                            </a>
+                        </s>
+                    </i>
+                    {% else %}
+                    <div class="task-incomplete-icon d-inline-block me-2"></div>
+                    <a href="{% url 'task-update' task.id %}" class="text-decoration-none text-dark fw-bold">
+                        {{ task }}
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="task-controls">
+                    <a href="{% url 'task-delete' task.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                    <span class="handle text-muted fs-5 ms-2">&#10247;</span>
+                </div>
+            </div>
+            {% empty %}
+            <div class="text-center py-4">
+                <p>No new tasks have been created.</p>
+                <p>
+                    Create a
+                    <a href="{% url 'task-create' %}" class="text-decoration-none text-danger fw-bold">New task</a>!
+                </p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-</div>
+</main>
 {% endblock %}
