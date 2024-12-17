@@ -4,24 +4,26 @@
 
 {% block content %}
 <main>
-    <h1 class="text-center my-4">Welcome to Merry Taskmas!</h1>
-
+    <div class="container d-flex justify-content-center my-4">
+        <div class="text-center red-box p-4 col-12 col-md-8 col-lg-6">
+            <h1>Welcome to Merry Taskmas!</h1>
+            <p>Your ultimate holiday planning tool to organize tasks, manage gift lists, and count down to a stress-free Christmas!</p>
+        </div>
+    </div>
     {% if event %}
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="red-box p-5 text-center">
-                <h2 class="mb-3">{{ event.name }} Countdown</h2>
-                <div id="countdown" 
-                     data-target-date="{{ event.event_date|date:'c' }}" 
-                     class="fs-4 fw-bold">
-                </div>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="red-box p-5 text-center">
+            <h2 class="mb-3">{{ event.name }}</h2>
+            <div id="countdown" data-target-date="{{ event.event_date|date:'c' }}" class="fs-4 fw-bold">
             </div>
         </div>
+    </div>
     {% else %}
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="red-box p-5 text-center">
-                <p class="fs-5 fw-bold mb-0">No event scheduled yet!</p>
-            </div>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="red-box p-5 text-center">
+            <p class="fs-5 fw-bold mb-0">No event scheduled yet!</p>
         </div>
+    </div>
     {% endif %}
 </main>
 

@@ -40,8 +40,8 @@ main {
 }
 
 h1, h2, h3 {
-    color: var(--secondary-color);
-    font-family: 'Alef', sans-serif;
+    color:var(--text-color);
+    font-family: 'Alice', sans-serif;
     letter-spacing: 1px;
 }
 
