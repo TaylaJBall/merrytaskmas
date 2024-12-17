@@ -4,13 +4,24 @@
 
 {% block content %}
 <main>
-    <h1>Welcome to Merry Taskmas!</h1>
+    <h1 class="text-center my-4">Welcome to Merry Taskmas!</h1>
 
     {% if event %}
-        <h2>{{ event.name }} Countdown</h2>
-        <div id="countdown" data-target-date="{{ event.event_date|date:'c' }}"></div>
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="red-box p-5 text-center">
+                <h2 class="mb-3">{{ event.name }} Countdown</h2>
+                <div id="countdown" 
+                     data-target-date="{{ event.event_date|date:'c' }}" 
+                     class="fs-4 fw-bold">
+                </div>
+            </div>
+        </div>
     {% else %}
-        <p>No event scheduled yet!</p>
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="red-box p-5 text-center">
+                <p class="fs-5 fw-bold mb-0">No event scheduled yet!</p>
+            </div>
+        </div>
     {% endif %}
 </main>
 
