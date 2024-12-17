@@ -8,7 +8,6 @@ class GiftList(models.Model):
     """
     A model to create and manage giftlists
     """
-    giftlist = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, related_name='giftlist_user', on_delete=models.CASCADE)
     person_name = models.CharField(max_length=200, default=None)
     budget = models.IntegerField(null=True, blank=True)
@@ -25,10 +24,9 @@ class Item(models.Model):
     """
     A model to create Items to add to giftlist
     """
-    item = models.AutoField(primary_key=True)
     giftlist = models.ForeignKey(GiftList, related_name='giftlist', on_delete=models.CASCADE)
     description = models.CharField(max_length=500, null=False, blank=False)
-    link = models.CharField(max_length=500, null=False, blank=False)
+    link = models.URLField(max_length=500, null=False, blank=False)
     created_at = models.DateTimeField(default=now, blank=True)
     updated_at = models.DateTimeField(default=now, blank=True)
 
