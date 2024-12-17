@@ -1,0 +1,17 @@
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.card_body {
+    background-color: var(#8d0801);
+}
+
+.giftlists {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.giftlists:hover {
+    cursor: pointer;
+}
