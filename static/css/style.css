@@ -49,6 +49,9 @@ p {
     color: var(--text-color);
 }
 
+.red-container {
+    background-color: #8B3A3A;
+}
 /*---------- Navbar ------------*/
 
 .navbar {
