@@ -15,3 +15,11 @@
 .giftlists:hover {
     cursor: pointer;
 }
+
+.item-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dotted;
+}
+
