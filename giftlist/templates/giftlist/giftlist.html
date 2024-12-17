@@ -6,6 +6,7 @@
 <h1 class="text-center p-2">
     My Lists
 </h1>
+<a href="{% url 'add_giftlist' %}" class="btn btn-primary w-25">Add List</a>
 <div class="container d-flex flex-row flex-wrap justfy-content-center">
     {% for giftlist in giftlists %}
     <a href="{% url 'view_item' giftlist.id %}" class="giftlists" aria-label="Click to view {{giftlist.person_name}}">
@@ -19,7 +20,7 @@
                 {% if request.user == giftlist.user %}
                 <div class="text-center">
                     <a href="" class="btn btn-primary w-25">Edit</a>
-                    <a href="" class="btn btn-primary w-25">Delete</a>
+                    <a href="{% url 'delete_giftlist' giftlist.id %}" class="btn btn-primary w-25">Delete</a>
                 </div>
                 {% endif %}
             </div>
