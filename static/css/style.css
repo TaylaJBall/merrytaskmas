@@ -40,8 +40,8 @@ main {
 }
 
 h1, h2, h3 {
-    color: var(--secondary-color);
-    font-family: 'Alef', sans-serif;
+    color:var(--text-color);
+    font-family: 'Alice', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -63,7 +63,7 @@ p {
     z-index: 1000;
     width: 100%;
     border-bottom: 1px dotted var(--text-color);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
     z-index: 1000;
     
 }
@@ -122,17 +122,16 @@ p {
 }
 
 .red-box {
-    background: rgba(141, 8, 1, 0.5); /* Transparent red */
+    background: rgba(141, 8, 1, 0.5); 
     color: #f4d58d;
     padding: 20px;
     border-radius: 10px;
     border: 1px dotted #f4d58d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 10; /* Ensure visibility */
-    margin-top: 20px; /* Adjust spacing */
-    max-width: 100%; /* Ensure it doesn't overflow */
+    z-index: 10;
+    margin-top: 20px; 
+    max-width: 100%; 
 }
-
 
 .red-box .login {
     display: flex;
@@ -161,6 +160,9 @@ p {
     position: relative;
     height: 100vh;
 }
+
+/* --------Christmas Countdown--------- */
+
 
 /*------- Footer ---------- */
 footer {
