@@ -244,6 +244,7 @@ p {
 /*------- Footer ---------- */
 footer {
     background-color: #8B3A3A;
+    height:120;
     padding: 10px 0;
     text-align: center;
     border-top: 1px dotted var(--text-color);
