@@ -81,7 +81,9 @@ class DeleteItem(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Item
 
     def test_func(self):
-        return self.request.user == self.get_object().user
+        item = self.get_object()
+        return item.giftlist.user == self.request.user
 
     def get_success_url(self):
-        return reverse('giftlist')
+        giftlist_id = self.get_object().giftlist.id
+        return reverse('view_item', kwargs={'giftlist_id': giftlist_id})
