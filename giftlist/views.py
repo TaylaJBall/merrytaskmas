@@ -1,9 +1,10 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from giftlist.models import GiftList, Item
 from .forms import GiftListForm, ItemForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-class GiftLists(ListView):
+class GiftLists(LoginRequiredMixin, ListView):
     template_name = 'giftlist/giftlist.html'
     model = GiftList
     context_object_name = 'giftlists'
@@ -15,17 +16,39 @@ class AddGiftList(LoginRequiredMixin ,CreateView):
     template_name = 'giftlist/add_giftlist.html'
     model = GiftList
     form_class = GiftListForm
-    success_url = 'giftlist/giftlist/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddGiftList, self).form_valid(form)
 
+    def get_success_url(self):
+        return reverse('giftlist')
 
-class Items(DetailView):
+
+class DeleteGiftList(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    Delete a giftlist
+    """
+    model = GiftList
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+    def get_success_url(self):
+        return reverse('giftlist')
+
+
+class Items(LoginRequiredMixin, ListView):
     template_name = 'giftlist/item.html'
     model = Item
     context_object_name = 'item'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        giftlist = GiftList.objects.get(id=self.kwargs['giftlist_id'])
+        context['giftlist'] = giftlist
+        context['items'] = Item.objects.filter(giftlist=giftlist)
+        return context
 
 
 class AddItem(LoginRequiredMixin, CreateView):
@@ -35,8 +58,32 @@ class AddItem(LoginRequiredMixin, CreateView):
     template_name = 'giftlist/add_item.html'
     model = Item
     form_class = ItemForm
-    success_url = 'giftlist/giftlist/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['giftlist'] = GiftList.objects.get(id=self.kwargs['giftlist_id'])
+        return context
 
     def form_valid(self, form):
+        giftlist = GiftList.objects.get(id=self.kwargs['giftlist_id'])
+        form.instance.giftlist = giftlist
         form.instance.user = self.request.user
         return super(AddItem, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('view_item', kwargs={'giftlist_id': self.kwargs['giftlist_id']})
+
+
+class DeleteItem(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    Delete an Item
+    """
+    model = Item
+
+    def test_func(self):
+        item = self.get_object()
+        return item.giftlist.user == self.request.user
+
+    def get_success_url(self):
+        giftlist_id = self.get_object().giftlist.id
+        return reverse('view_item', kwargs={'giftlist_id': giftlist_id})
