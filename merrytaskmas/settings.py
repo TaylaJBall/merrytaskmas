@@ -30,12 +30,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-taylajball-merrytaskmas-jtsntl9ikt4.ws.codeinstitute-ide.net',
     '8000-taylajball-merrytaskmas-wib198bg41f.ws.codeinstitute-ide.net',
     '8000-taylajball-merrytaskmas-qcfbgddvrwv.ws.codeinstitute-ide.net',
-    'https://merrytaskmas-e050025a1784.herokuapp.com/']
+    'merrytaskmas-e050025a1784.herokuapp.com',]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net",
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'crispy_forms',
+    'crispy_bootstrap5',
     'home',
     'giftlist',
     'task',
@@ -80,6 +82,8 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 ROOT_URLCONF = 'merrytaskmas.urls'
 
 TEMPLATES = [
@@ -143,7 +147,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 

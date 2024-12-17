@@ -6,9 +6,10 @@
 <h1 class="text-center p-2">
     My Lists
 </h1>
+<a href="{% url 'add_giftlist' %}" class="btn btn-primary w-25">Add List</a>
 <div class="container d-flex flex-row flex-wrap justfy-content-center">
     {% for giftlist in giftlists %}
-    <a href="" class="giftlists" aria-label="Click to view {{giftlist.person_name}}">
+    <a href="{% url 'view_item' giftlist.id %}" class="giftlists" aria-label="Click to view {{giftlist.person_name}}">
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
                 <h2 class="card-title">{{giftlist.person_name}}</h2>
@@ -16,6 +17,12 @@
                 <p class="card-text">Created at: {{giftlist.created_at}}</p>
                 <p class="card-text">Updated at: {{giftlist.updated_at}}</p>
 
+                {% if request.user == giftlist.user %}
+                <div class="text-center">
+                    <a href="{% url 'edit_giftlist' giftlist.id %}" class="btn btn-primary w-25">Edit</a>
+                    <a href="{% url 'delete_giftlist' giftlist.id %}" class="btn btn-primary w-25">Delete</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </a>

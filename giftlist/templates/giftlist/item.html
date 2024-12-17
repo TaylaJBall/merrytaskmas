@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Items - {{ giftlist.person_name }}{% endblock %}
+
+{% block content %}
+{% if giftlist.id %}
+<a href="{% url 'add_item' giftlist_id=giftlist.id %}" class="btn btn-primary w-25">Add Item</a>
+{% else %}
+<p>No Gift List available.</p>
+{% endif %}
+
+<div class="container red-container">
+    <div class="item-description mt-3 p-1">
+        <h1 class="text-center">{{ giftlist.person_name }}</h1>
+        {% for item in items %}
+        <div class="item">
+            <p class="text-center"><strong>Description: </strong>{{ item.description|safe }}</p>
+            <p class="text-center"><strong>Link: </strong><a href="{{ item.link }}" target="_blank">{{ item.link }}</a></p>
+            <p><strong>Created at: </strong>{{ item.created_at }}</p>
+            <p><strong>Updated at: </strong>{{ item.updated_at }}</p>
+            <div class="text-center">
+                <a href="{% url 'edit_item' item.id %}" class="btn btn-primary w-25">Edit</a>
+                <a href="{% url 'delete_item' item.id %}" class="btn btn-primary w-25">Delete</a>
+            </div>
+            <hr>
+
+            {% if request.user == item.user %}
+            <div class="text-center">
+                <a href="" class="btn btn-primary w-25">Edit</a>
+                <a href="{% url 'delete_item' item.id %}" class="btn btn-primary w-25">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+        {% empty %}
+        <p>No items have been added to this gift list yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
