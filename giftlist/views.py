@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from .models import GiftList, Item
 from .forms import GiftListForm, ItemForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -22,7 +22,7 @@ class AddGiftList(LoginRequiredMixin ,CreateView):
         return super(AddGiftList, self).form_valid(form)
 
 
-class Items(ListView):
+class Items(DetailView):
     template_name = 'giftlist/item.html'
     model = Item
     context_object_name = 'items'
