@@ -3,10 +3,10 @@ from .models import GiftList, Item
 from .forms import GiftListForm, ItemForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-class GiftList(ListView):
+class GiftLists(ListView):
     template_name = 'giftlist/giftlist.html'
     model = GiftList
-    context_object_name = 'giftlist'
+    context_object_name = 'giftlists'
 
 class AddGiftList(LoginRequiredMixin ,CreateView):
     """
@@ -22,10 +22,10 @@ class AddGiftList(LoginRequiredMixin ,CreateView):
         return super(AddGiftList, self).form_valid(form)
 
 
-class Item(ListView):
+class Items(ListView):
     template_name = 'giftlist/item.html'
     model = Item
-    context_object_name = 'item'
+    context_object_name = 'items'
 
 
 class AddItem(LoginRequiredMixin, CreateView):
