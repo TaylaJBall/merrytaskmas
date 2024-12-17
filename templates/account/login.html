@@ -1,27 +1,25 @@
-{% extends "base.html" %}
+{% extends "base_accounts" %}
 {% load static %}
+{% load i18n %}
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
-{%url 'account_login' as login_url %}
+{% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
-{%url 'account_logout' as logout_url %}
-{% load i18n %}
-{% load account socialaccount %}
+{% url 'account_logout' as logout_url %}
 
 {% trans "Sign In" %}
 
 {% block content %}
-
 <main>
-
     <div class="container-fluid">
-        <div class="row justify-content-center justify-content-lg-end align-items-center vh-100 mx-2">
-            <div class="col-10 col-md-6 col-lg-6 ms-lg-5">
+        <div class="row justify-content-center align-items-center vh-100">
+            <!-- Center the box properly -->
+            <div class="col-10 col-md-8 col-lg-4 offset-lg-4">
                 <div class="red-box p-4">
-                    <h3 class="mb-3 text-center text-lg-start">{% trans "Sign In" %}</h3>
-                    <p class="text-center text-lg-start">
+                    <h3 class="mb-3 text-center">{% trans "Sign In" %}</h3>
+                    <p class="text-center">
                         {% blocktrans %}
-                        Welcome back to the code|star blog. To leave a comment or like a post, please log in. 
+                        Welcome back to Merry Taskmas. To leave a comment or like a post, please log in. 
                         If you have not created an account yet, then 
                         <a class="link" href="{{ signup_url }}">sign up</a> first.
                         {% endblocktrans %}
@@ -38,7 +36,6 @@
             </div>
         </div>
     </div>
-
 </main>
 
 {% endblock %}
