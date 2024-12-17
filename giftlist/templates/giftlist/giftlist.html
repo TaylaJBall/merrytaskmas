@@ -7,7 +7,9 @@
     <div class="container my-4">
         <div class="d-flex justify-content-center">
             <h1 class="text-center red-box-solid" style="width: 20rem;">My Gift Lists</h1>
+            <a href="{% url 'add_giftlist' %}" class="btn btn-primary w-25">Add List</a>
         </div>
+        
         <div class="d-flex flex-wrap justify-content-center">
             {% for giftlist in giftlists %}
             <div class="card m-3 shadow-sm rounded red-box-solid" style="width: 20rem;">
@@ -22,7 +24,11 @@
                         {% endif %}
                     </p>
                     <a href="{% url 'view_item' giftlist.id %}" class="stretched-link"></a>
+                    {% if request.user == giftlist.user %}
+                    <a href="{% url 'edit_giftlist' giftlist.id %}" class="btn btn-primary w-25">Edit</a>
+                    <a href="{% url 'delete_giftlist' giftlist.id %}" class="btn btn-primary w-25">Delete</a>
                 </div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>

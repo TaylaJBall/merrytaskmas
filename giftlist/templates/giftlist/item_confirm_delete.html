@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Delete Gift List {{ object.person_name }}{% endblock %}
+{% block title %}Delete Item {{ object.description }}{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h1 class="text-center mt-2">Confirm Gift List Deletion</h1>
+    <h1 class="text-center mt-2">Confirm Item Deletion</h1>
     <div class="d-flex justify-content-center pt-3">
         <form class="text-center" method="post">
             {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object.person_name}}"?</p>
+        <p>Are you sure you want to delete "{{ object.description}}"?</p>
         <input type="submit" value="confirm" class="btn btn-primary w-25">    
         </form>
     </div>
