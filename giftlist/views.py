@@ -110,7 +110,10 @@ class EditItem(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'giftlist/edit_item.html'
     model = Item
     form_class = ItemForm
-    success_url = '/giftlist/'
 
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user == self.get_object().giftlist.user
+
+    def get_success_url(self):
+        giftlist_id = self.get_object().giftlist.id
+        return reverse('view_item', kwargs={'giftlist_id': giftlist_id})
