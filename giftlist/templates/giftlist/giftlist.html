@@ -3,29 +3,29 @@
 {% block title %}Gift Lists{% endblock %}
 
 {% block content %}
-<h1 class="text-center p-2">
-    My Lists
-</h1>
-<div class="container d-flex flex-row flex-wrap justfy-content-center">
-    {% for giftlist in giftlists %}
-    <a href="{% url 'view_item' giftlist.id %}" class="giftlists" aria-label="Click to view {{giftlist.person_name}}">
-        <div class="card m-3" style="width: 18rem;">
-            <div class="card-body">
-                <h2 class="card-title">{{giftlist.person_name}}</h2>
-                <p class="card-text">Budget: £{{giftlist.budget}}</p>
-                <p class="card-text">Created at: {{giftlist.created_at}}</p>
-                <p class="card-text">Updated at: {{giftlist.updated_at}}</p>
-
-                {% if request.user == giftlist.user %}
-                <div class="text-center">
-                    <a href="" class="btn btn-primary w-25">Edit</a>
-                    <a href="" class="btn btn-primary w-25">Delete</a>
-                </div>
-                {% endif %}
-            </div>
+<main>
+    <div class="container my-4">
+        <div class="d-flex justify-content-center">
+            <h1 class="text-center red-box-solid" style="width: 20rem;">My Gift Lists</h1>
         </div>
-    </a>
-    {% endfor %}
-</div>
-
+        <div class="d-flex flex-wrap justify-content-center">
+            {% for giftlist in giftlists %}
+            <div class="card m-3 shadow-sm rounded red-box-solid" style="width: 20rem;">
+                <div class="card-body text-center">
+                    <h2 class="card-title">{{ giftlist.person_name }}</h2>
+                    <p class="card-text fw-bold">Budget: £{{ giftlist.budget }}</p>
+                    <p class="card-text small">
+                        {% if giftlist.created_at == giftlist.updated_at %}
+                        Created: {{ giftlist.created_at }}
+                        {% else %}
+                        Updated: {{ giftlist.updated_at }}
+                        {% endif %}
+                    </p>
+                    <a href="{% url 'view_item' giftlist.id %}" class="stretched-link"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
 {% endblock %}

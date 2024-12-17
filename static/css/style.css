@@ -52,6 +52,14 @@ p {
 .red-container {
     background-color: #8B3A3A;
 }
+
+.index-hr {
+    border: none; 
+    height: 10px; 
+    background-color: var(--text-color);
+    margin: 20px 0; 
+}
+
 /*---------- Navbar ------------*/
 
 .navbar {
@@ -161,7 +169,47 @@ p {
     height: 100vh;
 }
 
-/* --------Christmas Countdown--------- */
+
+ /* Gift List Card Styling */
+.red-box-solid {
+    background-color: #8B3A3A; 
+    color: var(--text-color); 
+    border: 1px dotted #f4c095;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.red-box-solid:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-family: 'Alice', sans-serif;
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.btn-outline-success, .btn-outline-danger {
+    width: 40%; 
+    font-weight: bold;
+    border-width: 2px;
+}
+
+.btn-outline-success:hover {
+    background-color: #1d7874;
+    color: #fff;
+}
+
+.btn-outline-danger:hover {
+    background-color: #8d0801;
+    color: #fff;
+}
 
 
 /*------- Footer ---------- */
