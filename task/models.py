@@ -20,8 +20,7 @@ class meta:
 
 
 class Task(models.Model):
-    task = models.AutoField(primary_key=True)
-    todo_list = models.ForeignKey(TodoList, on_delete=models.CASCADE)
+    todo_list = models.ForeignKey(TodoList, on_delete=models.CASCADE, null=True)
     description = models.TextField(blank=True)
     is_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
