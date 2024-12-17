@@ -55,7 +55,7 @@
                 <ul class="navbar-nav mx-auto d-flex align-items-center text-center">
                     <!-- Left Links -->
                     <li class="nav-item">
-                        <a class="nav-link" href="">Task List</a>
+                        <a class="nav-link" href="{% url 'tasks' %}">Task List</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-1" href="{% url 'giftlist' %}">Gifts</a>
@@ -124,7 +124,7 @@
                 <div class="col-12 col-md-6 d-flex justify-content-around text-center mb-3 mb-md-0">
                     <!-- Developer 1 -->
                     <div>
-                        <img src="static/images/tayla2.png" alt="Tayla Ball" class="developer-circle mb-2">
+                        <img src="{% static 'images/tayla2.png' %}" alt="Tayla Ball" class="developer-circle mb-2">
                         <p class="mb-1">Tayla Ball</p>
                         <a href="https://www.linkedin.com/in/tayla-ball-3a4a1b329/" target="_blank" class="me-2">
                             <i class="fab fa-linkedin"></i>
@@ -136,7 +136,7 @@
     
                     <!-- Developer 2 -->
                     <div>
-                        <img src="static/images/joanne2.png" alt="Joanne Clarke" class="developer-circle mb-2">
+                        <img src="{% static 'images/joanne2.png' %}" alt="Joanne Clarke" class="developer-circle mb-2">
                         <p class="mb-1">Joanne Clarke</p>
                         <a href="https://www.linkedin.com/in/sarahjoanneclarke/" target="_blank" class="me-2">
                             <i class="fab fa-linkedin"></i>
@@ -148,7 +148,7 @@
     
                     <!-- Developer 3 -->
                     <div>
-                        <img src="static/images/laura2.png" alt="Laura Hall" class="developer-circle mb-2">
+                        <img src="{% static 'images/laura2.png' %}" alt="Laura Hall" class="developer-circle mb-2">
                         <p class="mb-1">Laura Hall</p>
                         <a href="https://www.linkedin.com/in/laura-chris-hall/" target="_blank" class="me-2">
                             <i class="fab fa-linkedin"></i>
