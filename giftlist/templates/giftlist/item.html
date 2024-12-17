@@ -19,7 +19,7 @@
             <p><strong>Created at: </strong>{{ item.created_at }}</p>
             <p><strong>Updated at: </strong>{{ item.updated_at }}</p>
             <div class="text-center">
-                <a href="" class="btn btn-primary w-25">Edit</a>
+                <a href="{% url 'edit_item' item.id %}" class="btn btn-primary w-25">Edit</a>
                 <a href="{% url 'delete_item' item.id %}" class="btn btn-primary w-25">Delete</a>
             </div>
             <hr>
