@@ -137,3 +137,8 @@ class EditItem(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user
+
+    def get_success_url(self):
+        giftlist_id = self.get_object().giftlist.id
+        messages.success(self.request, "Item edited successfully!")
+        return reverse("view_item", kwargs={"giftlist_id": giftlist_id})

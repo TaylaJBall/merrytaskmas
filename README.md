@@ -740,8 +740,15 @@ To start the deployment process, please follow the below steps:
 - [Chat GPT](https://chatgpt.com/) As above.
 - [Bootstrap 5](https://getbootstrap.com/docs/4.1/getting-started/introduction/) for many of the project's features.
 - [Geeks For Geeks](https://www.geeksforgeeks.org/event-countdown-timer-using-django/) for guidance on the Christmas countdown.
-
+- [Dennis Ivy](https://www.youtube.com/watch?v=llbtoQTt4qw) for task list tutorial.
+- [Dee MC](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
 
 ## Acknowledgements
+
+- Amy, our facilitator, as always for being pure awesome. 
+- The Coding Coach staff for being incredibly helpful with their advice. 
+- Tayla for being a brilliant leader.
+- Joanne for endless resilience.
+- Laura for design stuff. 
 
 

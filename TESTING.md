@@ -41,9 +41,9 @@ HTML pages were validated using the [W3C HTML Validator](https://validator.w3.or
 | Edit Gift List         | 0      | 0        |
 | Delete Gift List       | 0      | 0        |
 | View Gift List       | 0      | 0        |
-| Add Item               | 0      | 0        |
-| Edit Item              | 0      | 0        |
-| Task List              | 0      | 0        |
+| Add Item               | 1      | 0        |
+| Edit Item              | 1     | 0        |
+| Task List              | 1     | 0        |
 
 <details>
   <summary>Example Screenshot - Register Page</summary>
@@ -121,7 +121,7 @@ Testing was conducted using **Google Lighthouse** for both **Desktop** and **Mob
 
 ### Wave Accessibility Evaluation
 
-[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to test accessibility. No errors were found and the one warning relates to out of order headings.
+[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to test accessibility. No errors were found and the one warning relates to out of order headings. However, only the login and signin pages are accessible to test with Wave as all other pages required a logged in user.
 
 ![Wave Results](documentation/testing/wave_login.png)
 
@@ -135,13 +135,15 @@ Forms and user input were tested across the project to ensure proper behavior.
 
 | Feature                        | User Input       | Expected Behavior                          | Result |
 |--------------------------------|------------------|-------------------------------------------|--------|
-| **Add Gift List**              | Name, Budget     | Gift List is added and displayed           | Pass   |
+| **Add Gift List**              | Name, Budget     | Person's gift List is added and displayed           | Pass   |
 | **Edit Gift List**             | Update fields    | Changes are saved                          | Pass   |
-| **Delete Gift List**           | Confirmation     | Gift List is removed                       | Pass   |
-| **Add Item**                   | Description, Link| Item is added to Gift List                 | Pass   |
-| **Edit Item**                  | Update fields    | Item changes are saved                     | Pass   |
-| **Delete Item**                | Confirmation     | Item is removed from Gift List             | Pass   |
-| **Task List**                  | Task Input       | Task is added, edited, or deleted          | Pass   |
+| **Delete Gift List**           | Confirmation     | Person's Gift List is removed                       | Pass   |
+| **Gift View**                   | Description, Link| Display's persons gift items                | Pass   |
+| **Edit Gift Item**                  | Update fields    | Item changes are saved                     | Pass   |
+| **Delete Gift Item**                | Confirmation     | Item is removed from Gift List             | Pass   |
+| **Task List**                  | Task Input       | View task and add, edit or delete         | Pass   |
+| **Task Form**                  | Task Input       | Add a task         | Pass   |
+| **Task Confirm Delete**                  | Task Input       | Task confirm deletion        | Pass   |
 | **Sign In/Out**                | Email, Password  | User signs in or out successfully          | Pass   |
 
 ---
@@ -169,6 +171,9 @@ Testing was conducted across modern browsers:
 | Sign up and log in                      | Register and log in with account         | Yes     | Pass   |
 | View to-do list                         | Manage tasks for holiday planning        | Yes     | Pass   |
 | Logout confirmation                     | Confirm logout with cancel option        | Yes     | Pass   |
+| Event Calendar                     | A 'could do', not completed in this iteration       | No    | N/A   |
+| Shopping List                    | A 'could do', not completed in this iteration          | No     | N/A  |
+| Meal Planner                    | A 'could do', not completed in this iteration         | No    | N/A  |
 
 ---
 
@@ -178,32 +183,39 @@ The site was tested on various devices:
 
 | Device                  | Resolution | Result       |
 |-------------------------|------------|--------------|
-| iPhone 13 Mini          | 390x844    | Pass         |
-| iPad Air                | 820x1180   | Pass         |
-| MacBook Air             | 1440x900   | Pass         |
-| Desktop (Full HD)       | 1920x1080  | Pass         |
+| iPhone 15          | 2556 x 1179    | Pass         |
+| Galaxy Z Fold          | 2316 x 904 and 2176 x 1812 | Pass         |
+| Samsung S 10         | 3040 x 1440 | Pass         |
+| iPad Air  2023              | 820x1180   | Pass         |
+| MacBook Air 2024           | 1440x900   | Pass         |
+| Lenovo IdeaPad 15"       | 1920x1080  | Pass         |
+| Desktop - MSI Monitor 27" curved   | 1920x1080  | Pass         |
 
 ---
 
 ## Bugs
+There were several bugs that were a result of us learning how to collaborate using Django and still being fairly new to Django in the first place. Here are a sample of the bugs we encountered. 
 
 | Bug Description                             | Status   | Fix/Action Taken                          |
 |--------------------------------------------|----------|------------------------------------------|
-| CSS styles not applying to buttons          | Solved   | Adjusted specificity for custom classes   |
-| Task list item links overflowing            | Solved   | Added `word-wrap: break-word` to styles   |
-| Logout confirmation button alignment issue  | Solved   | Used Flexbox for consistent alignment     |
+| CSS styles not applying to buttons          | Solved - ChatGBT/Us  | Adjusted specificity for custom classes   |
+| Task list item links overflowing            | Solved  - ChatGBT/Us  | Added `word-wrap: break-word` to styles   |
+| Logout confirmation button alignment issue  | Solved - ChatGBT/Us   | Used Flexbox for consistent alignment     |
+| Subbranches needed packages installed on main  | Solved  - Amy  | Subbranches needed to run pip3 install -r requirements.txt     |
+| Unable to migrate or merge | Solved - Coding Coach   | Added a new DB because subbranches kept pulling in the old error and we were told that was the simplest fix    |
 
 ---
 
 ### Known Bugs
 
 - Double messages when you sign in again. "You have signed out as.." and "You have signed in as.."
+- "Updated on..." does not change in gift list pages as in the models created_at and updated_at are not set to auto_now. Since we noticed this fairly late on the last day we didn't want to change anything in the models and risk breaking it. 
 ---
 
 ## Conclusion
 
-The **MerryTaskmas** website has been thoroughly tested for functionality, responsiveness, and accessibility. All major features work as intended, and minor bugs have been addressed.
+The **MerryTaskmas** website has been thoroughly tested for functionality, responsiveness, and accessibility. All major features work as intended, and minor bugs have been addressed or talked about here.
 
-For any issues, please [open an issue on GitHub](https://github.com/TaylaJBall/merrytaskmas/issues).
+For any other issues, please let us know!
 
 ---
