@@ -16,6 +16,48 @@ For Admin access with relevant sign-in information: [MarryTaskmas Admin](https:/
 
 ## Table of Contents
 
+1. [Introduction](#introduction)
+2. [Overview](#overview)
+   - [Project Overview](#merry-taskmas-overview)
+   - [Future Development Plans](#future-development-plans)
+3. [UX - User Experience](#ux---user-experience)
+   - [Design Inspiration](#design-inspiration)
+   - [Colour Scheme](#colour-scheme)
+   - [Font](#font)
+4. [Project Planning](#project-planning)
+   - [Strategy Plane](#strategy-plane)
+   - [Site Goals](#site-goals)
+   - [Agile Methodologies](#agile-methodologies---project-management)
+   - [MoSCoW Prioritization](#moscow-prioritization)
+5. [Merry Taskmas Features](#merry-taskmas-features)
+6. [Scope Plane](#scope-plane)
+   - [Essential Features](#essential-features-of-merry-taskmas)
+   - [Should Have Features](#should-have-features)
+   - [Could Have Features](#could-have-features)
+7. [Structural Plane](#structural-plane)
+   - [Application Structure](#application-structure)
+8. [Skeleton & Surface Planes](#skeleton--surface-planes)
+   - [Wireframes](#wireframes)
+   - [Database Schema](#database-schema---entity-relationship-diagram)
+   - [Entities and Relationships](#entities-and-relationships)
+9. [Features](#features)
+   - [User View - Registered/Unregistered](#user-view---registeredunregistered)
+   - [CRUD Functionality](#crud-functionality)
+   - [Feature Showcase](#feature-showcase)
+10. [Technologies & Languages Used](#technologies--languages-used)
+11. [Libraries & Frameworks](#libraries--frameworks)
+12. [Tools & Programs](#tools--programs)
+13. [Testing](#testing)
+14. [Deployment](#deployment)
+    - [Connecting to GitHub](#connecting-to-github)
+    - [Django Project Setup](#django-project-setup)
+    - [Cloudinary API](#cloudinary-api)
+    - [Heroku Deployment](#heroku-deployment)
+15. [Credits](#credits)
+    - [Code](#code)
+    - [Acknowledgements](#acknowledgements)
+
+
 ## Overview
 
 # Merry Taskmas Overview
@@ -417,7 +459,11 @@ The **home page** serves as the main dashboard for registered users. The real-ti
 
 <details open>
     <summary>Home Page - Dashboard - Countdown</summary>  
-    <img src="documentation/screenshots/dashboard.png">  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-count.png" alt="Desktop Countdown" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-count.png" alt="Tablet Countdown" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-count.png" alt="Mobile Countdown" style="width: 20%;"/>
+    </div>
 </details>
 
 ---
@@ -438,20 +484,27 @@ The **Task List** allows registered users to manage their Christmas preparation 
 The **Gift List** enables users to organize gift ideas for friends and family. Users can create multiple gift lists, add recipients, set budgets, and manage gift ideas.
 
 <details open>
-    <summary>Gift List</summary>  
-    <img src="documentation/screenshots/gift_list.png">  
+    <summary>Gift List Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-giftlist.png" alt="Desktop Giftlist" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-giftlist.png" alt="Tablet Giftlist" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-giftlist.png" alt="Mobile Giftlist" style="width: 20%;"/>
+    </div>
 </details>
 
-<br>
-<hr>
+---
 
 ## **Log Out**
 
-The logout confirmation page ensures users do not accidentally log out. While one tester suggested removing this step, I decided to keep it to prevent accidental logouts.
+The logout confirmation page ensures users do not accidentally log out. 
 
 <details open>
-    <summary>Logout Page</summary>  
-    <img src="documentation/screenshots/logout.png">  
+    <summary>Log Out Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-logout.png" alt="Desktop Log out" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-logout.png" alt="Tablet Log out" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-logout.png" alt="Mobile Log out" style="width: 20%;"/>
+    </div>
 </details>
 
 <br>
@@ -462,29 +515,17 @@ The logout confirmation page ensures users do not accidentally log out. While on
 Users can sign up for an account using **Django AllAuth**, with the option to log in using their email. I considered integrating Google login but decided to prioritize core functionality for this version of the project.
 
 <details open>
-    <summary>Register Page</summary>  
-    <img src="documentation/screenshots/signup.png">  
+    <summary>Sign Up Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-signup.png" alt="Desktop Signup" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-signup.png" alt="Tablet Signup" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-signup.png" alt="Mobile Signup" style="width: 20%;"/>
+    </div>
 </details>
 
 <br>
 <hr>
 
-## **Privacy Policy and Terms of Service**
-
-The **Privacy Policy** and **Terms of Service** were added to meet best practices and reassure users about data usage. Since this is an educational project, no user data is stored or tracked beyond what is necessary for functionality.
-
-<details open>
-    <summary>Privacy Policy</summary>  
-    <img src="documentation/screenshots/privacy.png">  
-</details>
-
-<details open>
-    <summary>Terms of Service</summary>  
-    <img src="documentation/screenshots/terms.png">  
-</details>
-
-<br>
-<hr>
 
 ## **Admin Panel**
 
@@ -698,10 +739,7 @@ To start the deployment process, please follow the below steps:
 - [Perplexity AI](https://www.perplexity.ai/) for helping problem solve coding issues.
 - [Chat GPT](https://chatgpt.com/) As above.
 - [Bootstrap 5](https://getbootstrap.com/docs/4.1/getting-started/introduction/) for many of the project's features.
-
-
-
-## Media
+- [Geeks For Geeks](https://www.geeksforgeeks.org/event-countdown-timer-using-django/) for guidance on the Christmas countdown.
 
 
 ## Acknowledgements
