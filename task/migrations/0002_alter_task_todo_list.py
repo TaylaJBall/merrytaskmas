@@ -7,13 +7,17 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('task', '0001_initial'),
+        ("task", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='task',
-            name='todo_list',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='task.todolist'),
+            model_name="task",
+            name="todo_list",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="task.todolist",
+            ),
         ),
     ]
