@@ -473,8 +473,12 @@ The **home page** serves as the main dashboard for registered users. The real-ti
 The **Task List** allows registered users to manage their Christmas preparation tasks. Users can add, edit, mark tasks as complete, and delete tasks as needed.
 
 <details open>
-    <summary>Task List</summary>  
-    <img src="documentation/screenshots/task_list.png">  
+    <summary>Task List Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-tasks.png" alt="Desktop Task List" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-tasks.png" alt="Tablet Task List" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-tasks.png" alt="Mobile List" style="width: 20%;"/>
+    </div>
 </details>
 
 ---
@@ -529,14 +533,9 @@ Users can sign up for an account using **Django AllAuth**, with the option to lo
 
 ## **Admin Panel**
 
-The Django **Admin Panel** gives site administrators full control over user-generated data. Administrators can manage tasks, gift lists, and other features submitted by users. Admin approval is required to maintain site integrity and prevent misuse.
+The Django **Admin Panel** gives site administrators full control over user-generated data. Administrators can manage events,tasks, gift lists, and other features submitted by users. Admin approval is required to maintain site integrity and prevent misuse.
 
 To access the Admin Panel, an admin user adds `/admin/` to the URL. A username and password are required to log in.
-
-<details open>
-    <summary>Admin Panel</summary>  
-    <img src="documentation/screenshots/admin_panel.png">  
-</details>
 
 ---
 
