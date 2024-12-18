@@ -28,7 +28,6 @@ html, body {
 }
 
 body {
-    padding-top: 50px; 
     background: url('../images/snowman_bg.webp') no-repeat center center fixed;
     background-size: cover;
     background-color: var(--bg-color);
@@ -60,6 +59,11 @@ p {
     background-color: var(--text-color);
     margin: 20px 0; 
 }
+
+.login-status {
+    margin-top:60px;
+}
+
 
 /* General Alert Style */
 .alert {

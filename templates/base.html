@@ -79,6 +79,15 @@
         </div>
     </nav>
 
+    <!-- Login Status -->
+    <span class="navbar-text ms-auto text-nowrap mx-4 login-status">
+        {% if user.is_authenticated %}
+        Logged in as {{ user }}
+        {% else %}
+        Not logged in
+        {% endif %}
+    </span>
+
 
     <!-- displaying Django messages -->
 
@@ -110,7 +119,7 @@
                 <div class="col-12 col-md-2 text-center text-md-start mb-3 mb-md-0">
                     <h5 class="text-uppercase mb-3">The Team:</h5>
                 </div>
-    
+
                 <!-- Team Members Section -->
                 <div class="col-12 col-md-6 d-flex justify-content-around text-center mb-3 mb-md-0 align-self-start">
                     <!-- Developer 1 -->
@@ -124,7 +133,7 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
-    
+
                     <!-- Developer 2 -->
                     <div>
                         <img src="{% static 'images/joanne2.png' %}" alt="Joanne Clarke" class="developer-circle mb-2">
@@ -136,7 +145,7 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
-    
+
                     <!-- Developer 3 -->
                     <div>
                         <img src="{% static 'images/laura2.png' %}" alt="Laura Hall" class="developer-circle mb-2">
@@ -149,17 +158,17 @@
                         </a>
                     </div>
                 </div>
-    
+
                 <!-- Vertical Rule for Larger Screens -->
                 <div class="col-12 col-md-1 d-none d-md-flex justify-content-center align-self-start">
                     <div class="vr"></div>
                 </div>
-    
+
                 <!-- Horizontal Rule for Smaller Screens -->
                 <div class="col-12 d-md-none align-self-start">
                     <hr class="my-3" />
                 </div>
-    
+
                 <!-- Copyright Section -->
                 <div class="col-12 col-md-3 text-center align-self-center">
                     <p class="mb-0">&copy; 2024 The Gitmas Squad. All rights reserved.</p>
@@ -167,8 +176,8 @@
             </div>
         </div>
     </footer>
-    
-    
+
+
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">

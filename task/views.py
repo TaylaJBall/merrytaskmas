@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages  # Added for success messages
 
 from .models import TodoList, Task
 
@@ -45,6 +46,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
         todo_list = TodoList.objects.filter(user=self.request.user).first()
         if todo_list:  # Make sure the TodoList exists
             form.instance.todo_list = todo_list
+        messages.success(self.request, "Task created successfully!")
         return super(TaskCreate, self).form_valid(form)
 
 
@@ -53,9 +55,22 @@ class TaskUpdate(LoginRequiredMixin, UpdateView):
     fields = ["description", "is_completed"]
     success_url = reverse_lazy("tasks")
 
+    def form_valid(self, form):
+        messages.success(self.request, "Task updated successfully!")
+        return super(TaskUpdate, self).form_valid(form)
+
 
 class TaskDelete(LoginRequiredMixin, DeleteView):
     model = Task
     template_name = "task/todo_confirm_delete.html"
     context_object_name = "task"
     success_url = reverse_lazy("tasks")
+
+    def form_valid(self, form):
+        messages.success(self.request, "Task deleted successfully!")
+        return super().form_valid(form)
+
+    def delete(self, request, *args, **kwargs):
+        response = super().delete(request, *args, **kwargs)
+        messages.success(self.request, "Task deleted successfully!")
+        return response
