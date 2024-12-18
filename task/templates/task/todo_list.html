@@ -11,9 +11,8 @@
                            value="{{ search_input }}" class="form-control me-2">
                     <input type="submit" value="Search" class="btn btn-add">
                 </form>
-                {% if tasks|length > 0 %}
-                <a href="{% url 'task-create' %}" class="btn btn-add btn-lg" style="font-size: 1.5rem;">&#x2b;</a>
-                {% endif %}
+                
+              
             </div>
         </div>
     <!-- Header Section -->
@@ -36,23 +35,24 @@
                     <div class="task-complete-icon d-inline-block me-2"></div>
                     <i>
                         <s>
-                            <a href="{% url 'task-update' task.pk %}" class="text-decoration-none text-muted">
+                            <a href="{% url 'task-update' task.id %}" class="text-decoration-none text-muted">
                                 {{ task.description }}
                             </a>
                         </s>
                     </i>
                     {% else %}
                     <div class="task-incomplete-icon d-inline-block me-2"></div>
-                    <a href="{% url 'task-update' task.pk %}" class="text-decoration-none text-dark fw-bold">
+                    <a href="{% url 'task-update' task.id %}" class="text-decoration-none fw-bold" style="color:#f4c095">
                         {{ task }}
                     </a>
                     {% endif %}
                 </div>
                 <div class="task-controls">
-                    <a href="{% url 'task-delete' task.pk %}" class="btn btn-outline-danger btn-sm">Delete</a>
-                    <span class="handle text-muted fs-5 ms-2">&#10247;</span>
+                    <a href="{% url 'task-delete' task.id %}" class="btn btn-delete btn-sm">Delete</a>
+                    
                 </div>
-            </div>
+                </div>
+            
             {% empty %}
             <div class="text-center py-4">
                 <p>No new tasks have been created.</p>
@@ -63,6 +63,11 @@
             </div>
             {% endfor %}
         </div>
+        <div class="d-flex justify-content-center">
+            {% if tasks|length > 0 %}
+            <a href="{% url 'task-create' %}" class="btn btn-add mt-3 " >Add Task</a>
+            {% endif %}</div>
     </div>
+    
 </main>
 {% endblock %}

@@ -15,24 +15,43 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='TodoList',
+            name="TodoList",
             fields=[
-                ('todo_list', models.AutoField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=200)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("todo_list", models.AutoField(primary_key=True, serialize=False)),
+                ("title", models.CharField(max_length=200)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Task',
+            name="Task",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.TextField(blank=True)),
-                ('is_completed', models.BooleanField(default=False)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('todo_list', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='task.todolist')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("description", models.TextField(blank=True)),
+                ("is_completed", models.BooleanField(default=False)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "todo_list",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="task.todolist"
+                    ),
+                ),
             ],
         ),
     ]
