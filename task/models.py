@@ -16,11 +16,12 @@ class TodoList(models.Model):
         return self.title
 
     class meta:
-        ordering = ['complete']        
+        ordering = ["complete"]
 
 
 class Task(models.Model):
-    todo_list = models.ForeignKey(TodoList, on_delete=models.CASCADE, null=True)
+    todo_list = models.ForeignKey(
+        TodoList, on_delete=models.CASCADE, null=True)
     description = models.TextField(blank=True)
     is_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
