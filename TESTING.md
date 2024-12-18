@@ -100,14 +100,23 @@ Python files were validated using [CI Python Linter](https://pep8ci.herokuapp.co
 
 Testing was conducted using **Google Lighthouse** for both **Desktop** and **Mobile** views.
 
-**Desktop Results**:
+**Desktop Results - Countdown Page**:
 
 ![Lighthouse Desktop](documentation/testing/lh_dt_count.png)
 
-**Mobile Results**:
+**Mobile Results Countdown Page**:
 
 ![Lighthouse Mobile](documentation/testing/lh_m_count.png)
+<br>
+<hr>
 
+**Desktop Results - Giftlist Page**:
+
+![Lighthouse Desktop](documentation/testing/lh_dt_giftlist.png)
+
+**Mobile Results Giftlist Page**:
+
+![Lighthouse Mobile](documentation/testing/lh_m_giftlist.png)
 ---
 
 ### Wave Accessibility Evaluation
