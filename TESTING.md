@@ -102,19 +102,19 @@ Testing was conducted using **Google Lighthouse** for both **Desktop** and **Mob
 
 **Desktop Results**:
 
-![Lighthouse Desktop](documentation/testing/lighthouse_desktop.png)
+![Lighthouse Desktop](documentation/testing/lh_dt_count.png)
 
 **Mobile Results**:
 
-![Lighthouse Mobile](documentation/testing/lighthouse_mobile.png)
+![Lighthouse Mobile](documentation/testing/lh_m_count.png)
 
 ---
 
 ### Wave Accessibility Evaluation
 
-[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to test accessibility. A few minor **contrast errors** were found, but they are non-critical and will be addressed in future updates.
+[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to test accessibility. No errors were found and the one warning relates to out of order headings.
 
-![Wave Results](documentation/testing/wave.png)
+![Wave Results](documentation/testing/wave_login.png)
 
 ---
 
