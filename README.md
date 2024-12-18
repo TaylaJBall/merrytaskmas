@@ -518,7 +518,7 @@ Users can sign up for an account using **Django AllAuth**, with the option to lo
     <summary>Sign Up Page</summary>  
     <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
         <img src="documentation/screenshots/dt-signup.png" alt="Desktop Signup" style="width: 50%;"/>
-        <img src="documentation/screenshots/t-signuo.png" alt="Tablet Signuo" style="width: 30%;"/>
+        <img src="documentation/screenshots/t-signup.png" alt="Tablet Signup" style="width: 30%;"/>
         <img src="documentation/screenshots/m-signup.png" alt="Mobile Signup" style="width: 20%;"/>
     </div>
 </details>

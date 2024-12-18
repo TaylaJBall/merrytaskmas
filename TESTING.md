@@ -32,17 +32,18 @@ HTML pages were validated using the [W3C HTML Validator](https://validator.w3.or
 
 | Page                   | Errors | Warnings |
 |------------------------|--------|----------|
-| Home                   | 0      | 0        |
+| Home - Countdown                  | 0      | 0        |
 | Login                  | 0      | 0        |
 | Logout                 | 0      | 0        |
-| Register               | 0      | 0        |
+| Register               | 2     | 0        |
+| Gift List Page         | 0      | 0        |
 | Add Gift List          | 0      | 0        |
 | Edit Gift List         | 0      | 0        |
 | Delete Gift List       | 0      | 0        |
-| Add Item               | 0      | 0        |
-| Edit Item              | 0      | 0        |
-| Gift List Page         | 0      | 0        |
-| Task List              | 0      | 0        |
+| View Gift List       | 0      | 0        |
+<!-- | Add Item               | 0      | 0        | -->
+<!-- | Edit Item              | 0      | 0        | -->
+<!-- | Task List              | 0      | 0        | -->
 
 <details>
   <summary>Example Screenshot - Register Page</summary>
@@ -53,9 +54,10 @@ HTML pages were validated using the [W3C HTML Validator](https://validator.w3.or
 
 ### CSS Validation
 
-The CSS file was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), and no errors or warnings were found.
+The CSS file was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), and no errors were found.
 
-![CSS Validation](documentation/testing/css_validation.png)
+![style](documentation/testing/style.png)
+![style_account validation](documentation/testing/style_account.png)
 
 ---
 
@@ -70,7 +72,7 @@ The JavaScript files were validated using [JSHint](https://jshint.com/). All fil
 
 <details>
   <summary>Example Screenshot - countdown.js</summary>
-  <img src="documentation/testing/js_countdown.png">
+  <img src="documentation/testing/countdown.png">
 </details>
 
 ---
@@ -79,12 +81,13 @@ The JavaScript files were validated using [JSHint](https://jshint.com/). All fil
 
 Python files were validated using [CI Python Linter](https://pep8ci.herokuapp.com/) for PEP8 compliance. There were no errors.
 
-| File                 | Errors | Notes           |
-|----------------------|--------|-----------------|
-| `views.py`           | 0      | No issues       |
-| `models.py`          | 0      | No issues       |
-| `urls.py`            | 0      | No issues       |
-| `forms.py`           | 0      | No issues       |
+
+| Feature | admin.py | forms.py | models.py | urls.py | views.py |
+|---------|----------|----------|-----------|---------|----------|
+| home | [no errors](documentation/testing/py/review_admin.png) | [no errors](documentation/testing/py/review_forms.png) | [no errors](documentation/testing/py/review_models.png) | [no errors](documentation/testing/py/review_urls.png) | [no errors](documentation/testing/py/review_views.png) |
+| task | [no errors](documentation/testing/py/tbr_admin.png) | N/A | [no errors](documentation/testing/py/tbr_models.png) | [no errors](documentation/testing/py/tbr_urls.png) | [no errors](documentation/testing/py/tbr_views.png) |
+| giftlist | settings.py: [no errors](documentation/testing/py/config_settings.png) | N/A | N/A | [no errors](documentation/testing/py/config_urls.png) | N/A |
+| merrytaskmas| settings.py: [no errors](documentation/testing/py/config_settings.png) | N/A | N/A | [no errors](documentation/testing/py/config_urls.png) | N/A |
 
 <details>
   <summary>Example Screenshot - views.py</summary>
@@ -185,9 +188,7 @@ The site was tested on various devices:
 
 ### Known Bugs
 
-- Minor contrast errors in footer links reported by **Wave Tool**.
-- Placeholder images do not load consistently in Safari (related to Cloudinary).
-
+- Double messages when you sign in again. "You have signed out as.." and "You have signed in as.."
 ---
 
 ## Conclusion
