@@ -8,9 +8,9 @@
 
 **MerryTaskmas** is an educational project developed for the final Hackathon of a Code Institute Bootcamp. In the spirit of the holiday season, we created MerryTaskmas, your ultimate holiday helper that tracks everything related to Christmas. This application allows you to manage your to-do lists, create Christmas wishlists for your loved ones, and features a countdown to Christmas, among other festive functionalities.
 
-View the live site here: [MerryTaskmas]()
+View the live site here: [MerryTaskmas](https://merrytaskmas-e050025a1784.herokuapp.com)
 
-For Admin access with relevant sign-in information: [MarryTaskmas Admin]()
+For Admin access with relevant sign-in information: [MarryTaskmas Admin](https://merrytaskmas-e050025a1784.herokuapp.com/admin/)
 
 ---
 
