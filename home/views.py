@@ -6,7 +6,7 @@ from .models import Event
 
 
 class HomePage(LoginRequiredMixin, TemplateView):
-    template_name = 'index.html'
+    template_name = "index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -19,15 +19,15 @@ class HomePage(LoginRequiredMixin, TemplateView):
             minutes = (time_remaining.seconds % 3600) // 60
             seconds = time_remaining.seconds % 60
             # Pass both the original event and countdown values
-            context['event'] = event
-            context['countdown'] = {
-                'days': time_remaining.days,
-                'hours': hours,
-                'minutes': minutes,
-                'seconds': seconds,
+            context["event"] = event
+            context["countdown"] = {
+                "days": time_remaining.days,
+                "hours": hours,
+                "minutes": minutes,
+                "seconds": seconds,
             }
         else:
-            context['event'] = None
-            context['countdown'] = None
+            context["event"] = None
+            context["countdown"] = None
 
         return context
