@@ -15,7 +15,7 @@ class TodoList(LoginRequiredMixin, ListView):
     template_name = 'task/todo_list.html'
     context_object_name = 'tasks'
 
-
+    
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
     template_name = 'task/todo_list.html'
@@ -34,7 +34,7 @@ class TodoCreate(LoginRequiredMixin, CreateView):
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['description', 'is_completed']
+    fields = ['todo_list','description', 'is_completed']
     success_url = reverse_lazy('tasks')
 
 
