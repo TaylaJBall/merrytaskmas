@@ -15,7 +15,7 @@
                 <p class="text-center"><strong>Description:</strong> {{ item.description|safe }}</p>
                 <p class="text-center">
                     <strong>Link:</strong>
-                    <a href="{{ item.link }}" target="_blank">{{ item.link }}</a>
+                    <a href="{{ item.link }}" target="_blank" class="link-truncate">{{ item.link }}</a>
                 </p>
                 <p class="text-center small">
                     {% if item.created_at == item.updated_at %}

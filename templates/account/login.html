@@ -1,13 +1,10 @@
 {% extends "base_accounts" %}
 {% load static %}
-{% load i18n %}
+{% load i18n %}  <!-- Add this line for translations -->
 {% url 'home' as home_url %}
-{% url 'about' as about_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
-
-{% trans "Sign In" %}
 
 {% block content %}
 <main>
@@ -21,15 +18,25 @@
                         {% blocktrans %}
                         Welcome back to Merry Taskmas. To leave a comment or like a post, please log in. 
                         If you have not created an account yet, then 
-                        <a class="link" href="{{ signup_url }}">sign up</a> first.
+                        <a class="link" style="color:#679289; font-weight: bold;" href="{{ signup_url }}">sign up</a> first.
                         {% endblocktrans %}
                     </p>
                     <form class="login mt-4" method="POST" action="{% url 'account_login' %}">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
+                        {{ form.non_field_errors }}
+
+                        <!-- Render each form field -->
+                        {% for field in form %}
+                        <div class="mb-3">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% for error in field.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+
+                        <!-- Submit Button -->
                         <button class="btn btn-signup mt-2 w-100" type="submit">{% trans "Sign In" %}</button>
                     </form>
                 </div>
@@ -37,5 +44,4 @@
         </div>
     </div>
 </main>
-
 {% endblock %}

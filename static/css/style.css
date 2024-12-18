@@ -17,6 +17,7 @@ h5 {
     font-family: 'Alice', sans-serif;
 }
 
+
 /* Custom Styles */
 
 html, body {
@@ -58,6 +59,20 @@ p {
     height: 10px; 
     background-color: var(--text-color);
     margin: 20px 0; 
+}
+
+/* General Alert Style */
+.alert {
+    font-family: 'Raleway', sans-serif;
+    color:var(--bg-color);
+    font-weight:bold;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--accent-color);
 }
 
 /*---------- Navbar ------------*/
@@ -239,6 +254,35 @@ p {
     background-color: var(--accent-color);
     color: var(--dark-color);
 }
+
+.link-truncate {
+    display: block; /* Ensure the link behaves like a block element */
+    word-wrap: break-word; /* Allow the URL to break onto the next line */
+    overflow-wrap: break-word; /* Ensure long words (URLs) wrap properly */
+    text-decoration: none; /* Optional: keep the styling clean */
+    color: var(--accent-color); /* Use your theme color */
+}
+
+.link-truncate:hover {
+    text-decoration: underline; /* Optional: add underline on hover */
+}
+
+/* Style the default Django AllAuth 'Forgot Password' link */
+a[href*="reset_password"] {
+    color: #679289; /* Custom color */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Force it onto its own line */
+    margin-top: 10px; /* Spacing under input box */
+    text-align: center; /* Center the link */
+}
+
+a[href*="reset_password"]:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+
 
 
 /*------- Footer ---------- */
