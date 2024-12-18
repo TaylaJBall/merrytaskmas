@@ -72,7 +72,7 @@ The JavaScript files were validated using [JSHint](https://jshint.com/). All fil
 
 <details>
   <summary>Example Screenshot - countdown.js</summary>
-  <img src="documentation/testing/countdown.png">
+  <img src="/documentation/testing/Views.py_giftlist.png">
 </details>
 
 ---
@@ -84,10 +84,10 @@ Python files were validated using [CI Python Linter](https://pep8ci.herokuapp.co
 
 | Feature | admin.py | forms.py | models.py | urls.py | views.py |
 |---------|----------|----------|-----------|---------|----------|
-| home | [no errors](documentation/testing/py/review_admin.png) | [no errors](documentation/testing/py/review_forms.png) | [no errors](documentation/testing/py/review_models.png) | [no errors](documentation/testing/py/review_urls.png) | [no errors](documentation/testing/py/review_views.png) |
-| task | [no errors](documentation/testing/py/tbr_admin.png) | N/A | [no errors](documentation/testing/py/tbr_models.png) | [no errors](documentation/testing/py/tbr_urls.png) | [no errors](documentation/testing/py/tbr_views.png) |
-| giftlist | settings.py: [no errors](documentation/testing/py/config_settings.png) | N/A | N/A | [no errors](documentation/testing/py/config_urls.png) | N/A |
-| merrytaskmas| settings.py: [no errors](documentation/testing/py/config_settings.png) | N/A | N/A | [no errors](documentation/testing/py/config_urls.png) | N/A |
+| home | [no errors](/documentation/testing/Admin.py_home.png) | N/A | [no errors](/documentation/testing/Models.py_home.png) | [no errors](/documentation/testing/Urls.py_home.png) | [no errors](/documentation/testing/Views.py_home.png) |
+| task | [no errors](/documentation/testing/Admin.py_task.png) | [no errors](/documentation/testing/Forms.py_task.png) | [no errors](/documentation/testing/Models.py_task.png) | [no errors](/documentation/testing/Urls.py_task.png) | [no errors](/documentation/testing/Views.py_task.png) |
+| giftlist | [no errors](/documentation/testing/Admin.py_giftlist.png) | [no errors](/documentation/testing/Forms.py_giftlist.png) | [no errors](/documentation/testing/Models.py_giftlist.png) | [no errors](/documentation/testing/Urls.py_giftlist.png) | [no errors](/documentation/testing/Views.py_giftlist.png) |
+| merrytaskmas| settings.py: [no errors](/documentation/testing/Settings.py_merrytaskmas.png) | N/A | N/A | [no errors](/documentation/testing/Urls.py_merrytaskmas.png) | N/A |
 
 <details>
   <summary>Example Screenshot - views.py</summary>
