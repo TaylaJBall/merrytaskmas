@@ -7,34 +7,38 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import TodoList, Task
 
+
 class TodoListView(LoginRequiredMixin, ListView):
     model = Task  # We want to list tasks, not TodoLists
-    template_name = 'task/todo_list.html'
-    context_object_name = 'tasks'
+    template_name = "task/todo_list.html"
+    context_object_name = "tasks"
 
     def get_queryset(self):
         """Filter tasks that belong to the user's specific TodoList."""
-        todo_list, created = TodoList.objects.get_or_create(user=self.request.user, defaults={'title': 'My Default TodoList'})
-        return todo_list.task_set.all()  # Get all tasks associated with this TodoList
-       
+        todo_list, created = TodoList.objects.get_or_create(
+            user=self.request.user, defaults={"title": "My Default TodoList"}
+        )
+        # Get all tasks associated with this TodoList
+        return todo_list.task_set.all()
 
     def get_context_data(self, **kwargs):
         """Add count of incomplete tasks to the context."""
         context = super().get_context_data(**kwargs)
-        context['count'] = self.get_queryset().filter(is_completed=False).count()
+        context["count"] = self.get_queryset().filter(
+            is_completed=False).count()
         return context
 
 
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
-    template_name = 'task/todo_list.html'
-    context_object_name = 'task'
+    template_name = "task/todo_list.html"
+    context_object_name = "task"
 
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields = ['description', 'is_completed']
-    success_url = reverse_lazy('tasks')
+    fields = ["description", "is_completed"]
+    success_url = reverse_lazy("tasks")
 
     def form_valid(self, form):
         """Attach the task to the correct TodoList for this user."""
@@ -46,12 +50,12 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['description', 'is_completed']
-    success_url = reverse_lazy('tasks')
+    fields = ["description", "is_completed"]
+    success_url = reverse_lazy("tasks")
 
 
 class TaskDelete(LoginRequiredMixin, DeleteView):
     model = Task
-    template_name = 'task/todo_confirm_delete.html'
-    context_object_name = 'task'
-    success_url = reverse_lazy('tasks')
+    template_name = "task/todo_confirm_delete.html"
+    context_object_name = "task"
+    success_url = reverse_lazy("tasks")

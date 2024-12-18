@@ -12,7 +12,8 @@ class HomePage(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
 
         # Fetch event data for the countdown
-        event = Event.objects.first()  # You can adjust logic to fetch a specific event
+        event = Event.objects.first()
+        # You can adjust logic to fetch a specific event
         if event:
             time_remaining = event.event_date - timezone.now()
             hours = time_remaining.seconds // 3600
