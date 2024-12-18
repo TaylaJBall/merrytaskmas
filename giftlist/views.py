@@ -8,6 +8,7 @@ from django.views.generic import (
 from giftlist.models import GiftList, Item
 from .forms import GiftListForm, ItemForm
 from django.urls import reverse
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -28,6 +29,7 @@ class AddGiftList(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, "Gift list added successfully!")
         return super(AddGiftList, self).form_valid(form)
 
     def get_success_url(self):
@@ -45,6 +47,7 @@ class DeleteGiftList(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == self.get_object().user
 
     def get_success_url(self):
+        messages.success(self.request, "Gift list deleted successfully!")
         return reverse("giftlist")
 
 
@@ -60,6 +63,10 @@ class EditGiftList(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+    def form_valid(self, form):
+        messages.success(self.request, "Gift list updated successfully!")
+        return super(EditGiftList, self).form_valid(form)
 
 
 class Items(LoginRequiredMixin, ListView):
@@ -94,6 +101,7 @@ class AddItem(LoginRequiredMixin, CreateView):
         giftlist = GiftList.objects.get(id=self.kwargs["giftlist_id"])
         form.instance.giftlist = giftlist
         form.instance.user = self.request.user
+        messages.success(self.request, "Item added successfully!")
         return super(AddItem, self).form_valid(form)
 
     def get_success_url(self):
@@ -114,6 +122,7 @@ class DeleteItem(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         giftlist_id = self.get_object().giftlist.id
+        messages.success(self.request, "Item deleted successfully!")
         return reverse("view_item", kwargs={"giftlist_id": giftlist_id})
 
 
@@ -127,8 +136,4 @@ class EditItem(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = ItemForm
 
     def test_func(self):
-        return self.request.user == self.get_object().giftlist.user
-
-    def get_success_url(self):
-        giftlist_id = self.get_object().giftlist.id
-        return reverse("view_item", kwargs={"giftlist_id": giftlist_id})
+        return self.request.user
