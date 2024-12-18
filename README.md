@@ -459,7 +459,11 @@ The **home page** serves as the main dashboard for registered users. The real-ti
 
 <details open>
     <summary>Home Page - Dashboard - Countdown</summary>  
-    <img src="documentation/screenshots/dashboard.png">  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-count.png" alt="Desktop Countdown" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-count.png" alt="Tablet Countdown" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-count.png" alt="Mobile Countdown" style="width: 20%;"/>
+    </div>
 </details>
 
 ---
@@ -480,20 +484,27 @@ The **Task List** allows registered users to manage their Christmas preparation 
 The **Gift List** enables users to organize gift ideas for friends and family. Users can create multiple gift lists, add recipients, set budgets, and manage gift ideas.
 
 <details open>
-    <summary>Gift List</summary>  
-    <img src="documentation/screenshots/gift_list.png">  
+    <summary>Gift List Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-giftlist.png" alt="Desktop Giftlist" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-giftlist.png" alt="Tablet Giftlist" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-giftlist.png" alt="Mobile Giftlist" style="width: 20%;"/>
+    </div>
 </details>
 
-<br>
-<hr>
+---
 
 ## **Log Out**
 
-The logout confirmation page ensures users do not accidentally log out. While one tester suggested removing this step, I decided to keep it to prevent accidental logouts.
+The logout confirmation page ensures users do not accidentally log out. 
 
 <details open>
-    <summary>Logout Page</summary>  
-    <img src="documentation/screenshots/logout.png">  
+    <summary>Log Out Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-logout.png" alt="Desktop Log out" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-logout.png" alt="Tablet Log out" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-logout.png" alt="Mobile Log out" style="width: 20%;"/>
+    </div>
 </details>
 
 <br>
@@ -504,29 +515,17 @@ The logout confirmation page ensures users do not accidentally log out. While on
 Users can sign up for an account using **Django AllAuth**, with the option to log in using their email. I considered integrating Google login but decided to prioritize core functionality for this version of the project.
 
 <details open>
-    <summary>Register Page</summary>  
-    <img src="documentation/screenshots/signup.png">  
+    <summary>Sign Up Page</summary>  
+    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+        <img src="documentation/screenshots/dt-signup.png" alt="Desktop Signup" style="width: 50%;"/>
+        <img src="documentation/screenshots/t-signuo.png" alt="Tablet Signuo" style="width: 30%;"/>
+        <img src="documentation/screenshots/m-signup.png" alt="Mobile Signup" style="width: 20%;"/>
+    </div>
 </details>
 
 <br>
 <hr>
 
-## **Privacy Policy and Terms of Service**
-
-The **Privacy Policy** and **Terms of Service** were added to meet best practices and reassure users about data usage. Since this is an educational project, no user data is stored or tracked beyond what is necessary for functionality.
-
-<details open>
-    <summary>Privacy Policy</summary>  
-    <img src="documentation/screenshots/privacy.png">  
-</details>
-
-<details open>
-    <summary>Terms of Service</summary>  
-    <img src="documentation/screenshots/terms.png">  
-</details>
-
-<br>
-<hr>
 
 ## **Admin Panel**
 
