@@ -86,7 +86,8 @@ class AddItem(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["giftlist"] = GiftList.objects.get(id=self.kwargs["giftlist_id"])
+        context["giftlist"] = GiftList.objects.get(
+            id=self.kwargs["giftlist_id"])
         return context
 
     def form_valid(self, form):
@@ -96,7 +97,8 @@ class AddItem(LoginRequiredMixin, CreateView):
         return super(AddItem, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse("view_item", kwargs={"giftlist_id": self.kwargs["giftlist_id"]})
+        return reverse(
+            "view_item", kwargs={"giftlist_id": self.kwargs["giftlist_id"]})
 
 
 class DeleteItem(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
