@@ -32,12 +32,12 @@
             {% for task in tasks %}
             <div class="d-flex justify-content-between align-items-center border-bottom py-2" data-position="{{ task.pk }}">
                 <div class="task-title">
-                    {% if task.complete %}
+                    {% if task.is_completed %}
                     <div class="task-complete-icon d-inline-block me-2"></div>
                     <i>
                         <s>
                             <a href="{% url 'task-update' task.id %}" class="text-decoration-none text-muted">
-                                {{ task }}
+                                {{ task.description }}
                             </a>
                         </s>
                     </i>
