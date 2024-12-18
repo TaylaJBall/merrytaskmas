@@ -72,7 +72,7 @@ The JavaScript files were validated using [JSHint](https://jshint.com/). All fil
 
 <details>
   <summary>Example Screenshot - countdown.js</summary>
-  <img src="/documentation/testing/Views.py_giftlist.png">
+  <img src="documentation/testing/countdown.png">
 </details>
 
 ---
@@ -91,7 +91,7 @@ Python files were validated using [CI Python Linter](https://pep8ci.herokuapp.co
 
 <details>
   <summary>Example Screenshot - views.py</summary>
-  <img src="documentation/testing/python_views.png">
+  <img src="documentation/testing/views_task.png">
 </details>
 
 ---
