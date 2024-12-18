@@ -1,22 +1,23 @@
 from django import forms
 from .models import GiftList, Item
 
+
 class GiftListForm(forms.ModelForm):
     """
     Form to create a new gift list
     """
+
     class Meta:
         model = GiftList
         fields = [
-            'person_name',
-            'budget',
+            "person_name",
+            "budget",
         ]
 
         labels = {
-            'person_name': 'Name:',
-            'budget': 'Budget(£):',
+            "person_name": "Name:",
+            "budget": "Budget(£):",
         }
-
 
 
 class ItemForm(forms.ModelForm):
@@ -26,15 +27,12 @@ class ItemForm(forms.ModelForm):
 
     class Meta:
         model = Item
-        fields = [
-            'description',
-            'link'
-        ]
+        fields = ["description", "link"]
 
         widget = {
-            'description': forms.Textarea(attrs={'rows': 5}),
+            "description": forms.Textarea(attrs={"rows": 5}),
         }
         labels = {
-            'description': 'Description:',
-            'link': 'Link:',
+            "description": "Description:",
+            "link": "Link:",
         }
