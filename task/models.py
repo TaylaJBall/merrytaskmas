@@ -15,8 +15,8 @@ class TodoList(models.Model):
     def __str__(self):
         return self.title
 
-class meta:
-    ordering = ['complete']        
+    class meta:
+        ordering = ['complete']        
 
 
 class Task(models.Model):
@@ -27,4 +27,4 @@ class Task(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return self.description

@@ -36,20 +36,20 @@
                     <div class="task-complete-icon d-inline-block me-2"></div>
                     <i>
                         <s>
-                            <a href="{% url 'task-update' task.pk %}" class="text-decoration-none text-muted">
+                            <a href="{% url 'task-update' task.id %}" class="text-decoration-none text-muted">
                                 {{ task.description }}
                             </a>
                         </s>
                     </i>
                     {% else %}
                     <div class="task-incomplete-icon d-inline-block me-2"></div>
-                    <a href="{% url 'task-update' task.pk %}" class="text-decoration-none text-dark fw-bold">
+                    <a href="{% url 'task-update' task.id %}" class="text-decoration-none text-dark fw-bold">
                         {{ task }}
                     </a>
                     {% endif %}
                 </div>
                 <div class="task-controls">
-                    <a href="{% url 'task-delete' task.pk %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                    <a href="{% url 'task-delete' task.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
                     <span class="handle text-muted fs-5 ms-2">&#10247;</span>
                 </div>
             </div>
