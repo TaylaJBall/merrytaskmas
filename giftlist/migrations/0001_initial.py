@@ -16,31 +16,73 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='GiftList',
+            name="GiftList",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('person_name', models.CharField(default=None, max_length=200)),
-                ('budget', models.IntegerField(blank=True, null=True)),
-                ('created_at', models.DateTimeField(blank=True, default=django.utils.timezone.now)),
-                ('updated_at', models.DateTimeField(blank=True, default=django.utils.timezone.now)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='giftlist_user', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("person_name", models.CharField(default=None, max_length=200)),
+                ("budget", models.IntegerField(blank=True, null=True)),
+                (
+                    "created_at",
+                    models.DateTimeField(blank=True, default=django.utils.timezone.now),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(blank=True, default=django.utils.timezone.now),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="giftlist_user",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'ordering': ['-created_at'],
+                "ordering": ["-created_at"],
             },
         ),
         migrations.CreateModel(
-            name='Item',
+            name="Item",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=500)),
-                ('link', models.URLField(max_length=500)),
-                ('created_at', models.DateTimeField(blank=True, default=django.utils.timezone.now)),
-                ('updated_at', models.DateTimeField(blank=True, default=django.utils.timezone.now)),
-                ('giftlist', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='giftlist', to='giftlist.giftlist')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("description", models.CharField(max_length=500)),
+                ("link", models.URLField(max_length=500)),
+                (
+                    "created_at",
+                    models.DateTimeField(blank=True, default=django.utils.timezone.now),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(blank=True, default=django.utils.timezone.now),
+                ),
+                (
+                    "giftlist",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="giftlist",
+                        to="giftlist.giftlist",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['-created_at'],
+                "ordering": ["-created_at"],
             },
         ),
     ]
