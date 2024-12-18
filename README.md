@@ -16,6 +16,48 @@ For Admin access with relevant sign-in information: [MarryTaskmas Admin]()
 
 ## Table of Contents
 
+1. [Introduction](#introduction)
+2. [Overview](#overview)
+   - [Project Overview](#merry-taskmas-overview)
+   - [Future Development Plans](#future-development-plans)
+3. [UX - User Experience](#ux---user-experience)
+   - [Design Inspiration](#design-inspiration)
+   - [Colour Scheme](#colour-scheme)
+   - [Font](#font)
+4. [Project Planning](#project-planning)
+   - [Strategy Plane](#strategy-plane)
+   - [Site Goals](#site-goals)
+   - [Agile Methodologies](#agile-methodologies---project-management)
+   - [MoSCoW Prioritization](#moscow-prioritization)
+5. [Merry Taskmas Features](#merry-taskmas-features)
+6. [Scope Plane](#scope-plane)
+   - [Essential Features](#essential-features-of-merry-taskmas)
+   - [Should Have Features](#should-have-features)
+   - [Could Have Features](#could-have-features)
+7. [Structural Plane](#structural-plane)
+   - [Application Structure](#application-structure)
+8. [Skeleton & Surface Planes](#skeleton--surface-planes)
+   - [Wireframes](#wireframes)
+   - [Database Schema](#database-schema---entity-relationship-diagram)
+   - [Entities and Relationships](#entities-and-relationships)
+9. [Features](#features)
+   - [User View - Registered/Unregistered](#user-view---registeredunregistered)
+   - [CRUD Functionality](#crud-functionality)
+   - [Feature Showcase](#feature-showcase)
+10. [Technologies & Languages Used](#technologies--languages-used)
+11. [Libraries & Frameworks](#libraries--frameworks)
+12. [Tools & Programs](#tools--programs)
+13. [Testing](#testing)
+14. [Deployment](#deployment)
+    - [Connecting to GitHub](#connecting-to-github)
+    - [Django Project Setup](#django-project-setup)
+    - [Cloudinary API](#cloudinary-api)
+    - [Heroku Deployment](#heroku-deployment)
+15. [Credits](#credits)
+    - [Code](#code)
+    - [Acknowledgements](#acknowledgements)
+
+
 ## Overview
 
 # Merry Taskmas Overview
@@ -698,10 +740,7 @@ To start the deployment process, please follow the below steps:
 - [Perplexity AI](https://www.perplexity.ai/) for helping problem solve coding issues.
 - [Chat GPT](https://chatgpt.com/) As above.
 - [Bootstrap 5](https://getbootstrap.com/docs/4.1/getting-started/introduction/) for many of the project's features.
-
-
-
-## Media
+- [Geeks For Geeks](https://www.geeksforgeeks.org/event-countdown-timer-using-django/) for guidance on the Christmas countdown.
 
 
 ## Acknowledgements
