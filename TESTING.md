@@ -41,9 +41,9 @@ HTML pages were validated using the [W3C HTML Validator](https://validator.w3.or
 | Edit Gift List         | 0      | 0        |
 | Delete Gift List       | 0      | 0        |
 | View Gift List       | 0      | 0        |
-<!-- | Add Item               | 0      | 0        | -->
-<!-- | Edit Item              | 0      | 0        | -->
-<!-- | Task List              | 0      | 0        | -->
+| Add Item               | 0      | 0        |
+| Edit Item              | 0      | 0        |
+| Task List              | 0      | 0        |
 
 <details>
   <summary>Example Screenshot - Register Page</summary>
